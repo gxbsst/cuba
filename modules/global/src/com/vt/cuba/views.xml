@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<views xmlns="http://schemas.haulmont.com/cuba/view.xsd">
+    <view class="com.vt.cuba.entity.Mqtt"
+          extends="_local"
+          name="mqtt-view">
+        <property name="createTs"/>
+        <property name="createdBy"/>
+        <property name="updateTs"/>
+        <property name="updatedBy"/>
+    </view>
+</views>
