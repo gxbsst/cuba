@@ -1,0 +1,6 @@
+@mixin sct-sourcecodeeditor($primary-stylename: AceEditorWidget) {
+  .#{$primary-stylename}-sample-browser {
+    .ace_editor {
+    }
+  }
+}

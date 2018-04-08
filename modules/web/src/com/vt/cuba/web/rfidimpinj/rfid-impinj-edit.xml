@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editorCaption"
+        class="com.vt.cuba.web.rfidimpinj.RfidImpinjEdit"
+        datasource="rfidImpinjDs"
+        focusComponent="fieldGroup"
+        messagesPack="com.vt.cuba.web.rfidimpinj">
+    <dsContext>
+        <datasource id="rfidImpinjDs"
+                    class="com.vt.cuba.entity.RfidImpinj"
+                    view="rfidImpinj-with-port-view">
+            <collectionDatasource id="portDs"
+                                  property="port"/>
+        </datasource>
+    </dsContext>
+    <dialogMode forceDialog="true"/>
+    <layout expand="windowActions"
+            spacing="true">
+        <fieldGroup id="fieldGroup"
+                    datasource="rfidImpinjDs"
+                    width="100%">
+            <column width="100%">
+                <field property="name"
+                       width="100%"/>
+                <field property="ip"
+                       width="100%"/>
+            </column>
+            <column width="100%">
+                <field property="specId"
+                       width="100%"/>
+            </column>
+        </fieldGroup>
+        <groupBox id="portBox"
+                  caption="msg://com.vt.cuba.entity/RfidImpinj.port">
+            <table id="portTable"
+                   height="200px"
+                   width="100%">
+                <actions>
+                    <action id="add"/>
+                    <action id="remove"/>
+                </actions>
+                <columns>
+                    <column id="name"/>
+                    <column id="antenna"/>
+                    <column id="valid_rssi"/>
+                </columns>
+                <rows datasource="portDs"/>
+                <buttonsPanel>
+                    <button action="portTable.add"/>
+                    <button action="portTable.remove"/>
+                </buttonsPanel>
+            </table>
+        </groupBox>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>

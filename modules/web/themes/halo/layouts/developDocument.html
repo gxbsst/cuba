@@ -1,0 +1,95 @@
+<div location="logo" class="logo"></div>
+<div class="box-developDoc">
+	<h2>客户端下载</h2>
+	<hr>
+	<table cellpadding=0 cellspacing=0 border=1 class="component-table">
+		<tr>
+			<th><div location="col_1" class="col_1" /></th>
+			<th><div location="col_2" class="col_2" /></th>
+			<th><div location="col_3" class="col_3" /></th>
+			<th><div location="col_4" class="col_4" /></th>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>终端</td>
+			<td><pre>
+                    sct.wms_group_name = wms
+                    sct.weighting_group_name = weighting
+                    sct.feeding_3f_group_name = feeding_3f
+                    sct.packing_1f_group_name = packing_1f
+                    sct.feeding_1f_group_name = feeding_1f
+                    sct.feeding_6f_group_name = feeding_6f
+					 "WeightingBigLine12" // 12线大料称重
+				     "WeightingBigLine21" // 21线大料称重
+				      "WeightingSmallLine12" // 12线小料称重
+                      "WeightingSmallLine21"// 21线小料称重
+                      "FeedingLine12" // 12线投料
+				      "FeedingLine21" // 21线投料
+				     "PackingLine21" // 21线包装
+				      "PackingLine12"// 12线包装
+                </pre></td>
+			<td><a href="/app-webstart/App.jnlp">下载</a></td>
+		</tr>
+	</table>
+	<br /> <br />
+	<h2>客户端设置</h2>
+	<hr>
+	<p>基础数据 -》 客户端管理</p>
+	<dl>
+		<dt>1. 创建用户</dt>
+		<dd>
+			<p>
+				创建用户用户名
+				<code>client</code>
+				, 密码为:
+				<code>client</code>
+			</p>
+		</dd>
+		<dt>2设置客户端IP</dt>
+		<dd>
+			<p>
+				如果要设置IP为：
+				<code>192.168.30.87</code>
+				显示3F投料， 请在备注字段输入： <i>feeding_3f</i>. 分组类型请参考以上表格.
+			</p>
+		</dd>
+
+	</dl>
+	<br /> <br />
+	<h2>获取客户端信息</h2>
+	<hr />
+	<dl>
+		<dd>
+
+			<p>
+			<pre>
+		utils = new Utils(utilsService);
+		vtClientDeviceInformation= utils.getClientInfo();
+		
+		</pre>
+
+			</p>
+
+		</dd>
+	</dl>
+	<br /> <br />
+	<h2>设置Dialog在中间显示</h2>
+	<hr>
+	<dl>
+		<dd>
+			<pre>
+		dialogTouliaoMessage = new DialogTouliaoMessage(this);
+		Point location = utils.setCenterLocation(dialogTouliaoMessage);
+		dialogTouliaoMessage.setLocation(location);	
+	</pre>
+
+		</dd>
+	</dl>
+	<hr>
+
+	<div class="footer">
+		<footer>
+			&copy; 2017 <a href="http://www.vtstar.net">上海文什数据科技有限公司</a>
+		</footer>
+	</div>
+</div>

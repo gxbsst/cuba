@@ -3,5 +3,10 @@
     <menu id="application-cuba"
           insertBefore="administration">
         <item screen="cuba$Mqtt.browse"/>
+        <menu id="RfidConfig"
+              icon="font-icon:WIFI">
+            <item screen="sct$RfidImpinj.browse"/>
+            <item screen="sct$RfidPort.browse"/>
+        </menu>
     </menu>
 </menu-config>

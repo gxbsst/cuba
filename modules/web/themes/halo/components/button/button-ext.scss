@@ -1,0 +1,17 @@
+@mixin sct-button($primary-stylename: v-button) {
+  .#{$primary-stylename}-dark {
+    color: #191919;
+  }
+
+  .#{$primary-stylename}-dark:hover {
+    color: #5a5a5a;
+  }
+
+  .#{$primary-stylename}-dark:focus:after {
+    border-color: #191919;
+  }
+
+  .#{$primary-stylename}-small-link {
+    font-size: 12px;
+  }
+}

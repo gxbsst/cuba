@@ -1,0 +1,33 @@
+@mixin sct() {
+    .c-powered-by {
+      a {
+        background: none;
+        margin-left: 0;
+        padding: 0 0 0 0;
+      }
+    }
+
+    .c-app-icon {
+      height: 40px;
+    }
+   .c-inverse-header.c-app-menubar {
+     background: #000000;
+     //background: #529cc4;
+     border: none;
+   }
+
+  .c-inverse-header.c-app-menubar .c-main-menu .v-menubar-menuitem-more-item, .c-inverse-header.c-app-menubar .c-main-menu .v-menubar-menuitem-caption, .c-inverse-header.c-app-menubar .c-main-menu .v-menubar-menuitem-shortcut {
+    color: #FFF;
+  }
+
+  .c-inverse-header.c-app-menubar .c-user-select-label {
+    color: #FFF;
+  }
+  .c-inverse-header.c-app-menubar .c-ftsfield-button, .c-inverse-header.c-app-menubar .c-logout-button, .c-inverse-header.c-app-menubar .c-newwindow-button {
+    color: #FFF;
+  }
+  .c-inverse-header.c-app-menubar .c-ftsfield-button, .c-inverse-header.c-app-menubar .c-logout-button, .c-inverse-header.c-app-menubar .c-newwindow-button {
+    color: #FFF;
+  }
+
+}

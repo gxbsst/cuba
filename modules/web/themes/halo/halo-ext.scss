@@ -1,0 +1,160 @@
+@import "../halo/halo";
+@import "app/folderspane";
+@import "components/button/button-ext";
+@import "components/label/label-ext";
+@import "components/popupview/popupview-ext";
+@import "components/sourcecodeeditor/sourcecodeeditor-ext";
+@import "samples/components/table/table";
+@import "samples/components/calendar/calendar";
+@import "samples/components/twincolumn/twincolumn";
+@import "samples/components/htmlLayout/html-layout";
+@import "samples/components/cssLayout/css-layout";
+@import "sct/sct";
+
+@mixin halo-ext {
+  @include halo;
+  @include sct-button;
+  @include sct-label;
+  @include sct-folderspane;
+  @include sct-popupview;
+  @include sct-sourcecodeeditor;
+  @include sample-table;
+  @include sample-calendar;
+  @include sample-twincolumn;
+  @include sample-html-layout;
+  @include sample-css-layout;
+  @include sct;
+  .component-table {
+    //display: inline-block;
+    //vertical-align: top;
+    width: 100%;
+  }
+  .logo {
+    font-size: 40px;
+    margin-top: 25px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  .col_1 {
+    width: 20%;
+  }
+  .col_2 {
+    width: 25%;
+  }
+  .col_3 {
+    width: 30%;
+  }
+  .col_4 {
+    width: 25%;
+    text-align: center;
+  }
+  .footer {
+    position: fixed;
+    bottom: 0px;
+    text-align: center;
+  }
+
+  .c-login-icon > img {
+    height: auto;
+  }
+
+  .c-login-panel {
+    background: #FFF;
+
+  }
+
+  .v-grid-row.imported-production-order td {
+    font-weight: bold;
+    background: green;
+    color: #FFF;
+    .v-grid-selection-checkbox {
+      display: none;
+    }
+  }
+
+  .v-table-row-cs.cs.imported-work-order-rad td {
+    font-weight: bold;
+    background: #e80d0f;
+    color: #0d0411;
+    .v-grid-selection-checkbox {
+      display: none;
+    }
+  }
+
+  .v-table-row-cs.cs.imported-work-order-green td {
+    font-weight: bold;
+    background: #21e849;
+    color: #0d0411;
+    .v-grid-selection-checkbox {
+      display: none;
+    }
+  }
+
+  .v-table-row-cs.cs.imported-work-order-yellow td {
+    font-weight: bold;
+    background: rgba(240, 255, 31, 0.79);
+    color: #0d0411;
+    .v-grid-selection-checkbox {
+      display: none;
+    }
+  }
+
+  .component-container{
+    border-collapse:collapse;
+    width: 50%;
+  }
+  .component-container td, #component-container tr
+  {
+    font-size:1em;
+    border:1px solid #b7b7c0;
+    padding:3px 7px 2px 7px;
+  }
+
+  .component-container tr
+  {
+    font-size:1.1em;
+    text-align:left;
+    padding-top:5px;
+    padding-bottom:4px;
+    background-color: #f5f5f5;
+    color:#000000;
+  }
+
+  .component-container tr.alt td
+  {
+    color:#000000;
+    background-color:#EAF2D3;
+  }
+  .component-container tr.aaa td {
+    font-size: 16px;
+  }
+
+  .vt-work-order .c-table-composition.has-top-panel .c-table-top {
+     height: 70px;
+   }
+
+  .vt-production-order-details .c-data-grid-composition.has-top-panel .c-data-grid-top {
+    height: 70px;
+  }
+
+  .vt-product-label-info .c-table-composition.has-top-panel .c-table-top {
+    height: 65px;
+  }
+
+  .work-order-group-box {
+    margin-top: 15px;
+    background-color: lightblue;
+  }
+
+  .v-textfield-readonly-total {
+    font-size: 20px;
+    border: none;
+    text-align: center;
+    background-color: lightblue;
+  }
+
+  .c-group-box-content{
+    background-color: lightblue;
+  }
+
+}

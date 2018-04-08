@@ -8,3 +8,8 @@ deploy/*
 modules/*/build/*
 out
 test-run
+.DS_Store
+.classpath
+.project
+.settings
+.classpath

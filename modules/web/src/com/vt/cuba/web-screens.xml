@@ -5,4 +5,14 @@
             template="com/vt/cuba/web/mqtt/mqtt-browse.xml"/>
     <screen id="cuba$Mqtt.edit"
             template="com/vt/cuba/web/mqtt/mqtt-edit.xml"/>
+    <screen id="sct$RfidPort.browse"
+            template="com/vt/cuba/web/rfidport/rfid-port-browse.xml"/>
+    <screen id="sct$RfidPort.edit"
+            template="com/vt/cuba/web/rfidport/rfid-port-edit.xml"/>
+    <screen id="sct$RfidImpinj.browse"
+            template="com/vt/cuba/web/rfidimpinj/rfid-impinj-browse.xml"/>
+    <screen id="sct$RfidImpinj.edit"
+            template="com/vt/cuba/web/rfidimpinj/rfid-impinj-edit.xml"/>
+    <screen id="loginWindow"
+            template="com/vt/cuba/web/screens/ext-loginWindow.xml"/>
 </screen-config>

@@ -8,4 +8,15 @@
         <property name="updateTs"/>
         <property name="updatedBy"/>
     </view>
+
+    <view class="com.vt.cuba.entity.RfidImpinj"
+          extends="_local"
+          name="rfidImpinj-with-port-view">
+        <property name="port"
+                  view="_minimal">
+            <property name="name"/>
+            <property name="valid_rssi"/>
+        </property>
+    </view>
+
 </views>
