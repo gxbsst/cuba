@@ -96,6 +96,7 @@ export class AppsListComponent implements OnInit {
     }
 
     install(name: string) {
+
         this.commonService.startApp(name, (status) => {
             // this.data[1]['status'] = status;
         });

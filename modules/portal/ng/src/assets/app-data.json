@@ -1,6 +1,6 @@
 {
     "app": {
-        "name": "Alain",
+        "name": "RED",
         "description": "Ng-zorro admin panel front-end framework"
     },
     "user": {
@@ -15,6 +15,36 @@
             "group": true,
             "hideInBreadcrumb": true,
             "children": [
+                {
+                    "text": "应用服务",
+                    "i18n": "应用服务",
+                    "icon": "icon-magic-wand",
+                    "link": "/apps/apps-list"
+                },
+                {
+                    "text": "OPC",
+                    "i18n": "OPC",
+                    "icon": "icon-magic-wand",
+                    "link": "/opc/opc-index"
+                },
+                {
+                    "text": "RFID",
+                    "i18n": "RFID",
+                    "icon": "icon-magic-wand",
+                    "link": "/rfid/rfid-index"
+                },
+                {
+                    "text": "MQTT",
+                    "i18n": "MQTT",
+                    "icon": "anticon-bars",
+                    "children": [
+                        {
+                            "text": "列表",
+                            "link": "/mqtt/list",
+                            "i18n": "列表"
+                        }
+                    ]
+                },
                 {
                     "text": "仪表盘",
                     "i18n": "dashboard",
@@ -39,24 +69,6 @@
                             "text": "Workplace",
                             "link": "/dashboard/workplace",
                             "i18n": "dashboard_workplace"
-                        }
-                    ]
-                },
-                {
-                    "text": "应用服务",
-                    "i18n": "应用服务",
-                    "icon": "icon-magic-wand",
-                    "link": "/apps/apps-list"
-                },
-                {
-                    "text": "MQTT",
-                    "i18n": "MQTT",
-                    "icon": "anticon-bars",
-                    "children": [
-                        {
-                            "text": "列表",
-                            "link": "/mqtt/list",
-                            "i18n": "列表"
                         }
                     ]
                 },

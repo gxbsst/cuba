@@ -8,8 +8,8 @@ import gui from './gui';
 declare var child_process: any;
 declare var remote: any;
 declare var electron: any;
+// declare var process: any;
 const process = remote.process;
-
 // 应用服务
 const OPC = 'WSOpcConnector.jar';
 const PRINTER = 'printmanager.jar';
@@ -103,7 +103,7 @@ export class CommonService {
 
 
         if (appName === 'CUBA') {
-            startCcuba();
+            this.startCcuba();
         }
 
         // 打印服务
@@ -137,45 +137,47 @@ export class CommonService {
 
     }
 
-}
+    // 启动cuba
 
+    startCcuba() {
+        if (this.isWin()) {
+            execSync('./gradlew.bat undeploy setupTomcat deploy',
+                {
+                    cwd: gui.app.getAppPath() + '/cuba/'
+                });
 
-// 启动cuba
-
-function startCcuba() {
-    if (this.isWin()) {
-        execSync('./gradlew.bat undeploy setupTomcat deploy',
-            {
-                cwd: gui.app.getAppPath() + '/cuba/'
+            exec('./catalina.bat stop', {
+                cwd: gui.app.getAppPath() + '/cuba/deploy/tomcat/bin'
+            }, function (error, stdout, stderr) {
+                debugger;
             });
 
-        exec('./catalina.bat stop', {
-            cwd: gui.app.getAppPath() + '/cuba/deploy/tomcat/bin'
-        }, function (error, stdout, stderr) {
-            debugger;
-        });
+            const sctProcess = exec('./catalina.bat run', {
+                cwd: gui.app.getAppPath() + '/cuba/deploy/tomcat/bin'
+            }, function (error, stdout, stderr) {
+                debugger;
+            });
+        } else {
+            execSync('./gradlew undeploy setupTomcat deploy',
+                {
+                    cwd: gui.app.getAppPath() + '/cuba/'
+                });
 
-        const sctProcess = exec('./catalina.bat run', {
-            cwd: gui.app.getAppPath() + '/cuba/deploy/tomcat/bin'
-        }, function (error, stdout, stderr) {
-            debugger;
-        });
-    } else {
-        execSync('./gradlew undeploy setupTomcat deploy',
-            {
-                cwd: gui.app.getAppPath() + '/cuba/'
+            exec('./catalina.sh stop', {
+                cwd: gui.app.getAppPath() + '/cuba/deploy/tomcat/bin'
+            }, function (error, stdout, stderr) {
+                debugger;
             });
 
-        exec('./catalina.sh stop', {
-            cwd: gui.app.getAppPath() + '/cuba/deploy/tomcat/bin'
-        }, function (error, stdout, stderr) {
-            debugger;
-        });
-
-        const sctProcess = exec('./catalina.sh run', {
-            cwd: gui.app.getAppPath() + '/cuba/deploy/tomcat/bin'
-        }, function (error, stdout, stderr) {
-            debugger;
-        });
+            const sctProcess = exec('./catalina.sh run', {
+                cwd: gui.app.getAppPath() + '/cuba/deploy/tomcat/bin'
+            }, function (error, stdout, stderr) {
+                debugger;
+            });
+        }
     }
+
 }
+
+
+

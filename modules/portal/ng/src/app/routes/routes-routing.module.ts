@@ -38,7 +38,9 @@ const routes: Routes = [
             {path: 'extras', loadChildren: './extras/extras.module#ExtrasModule'},
             {path: 'pro', loadChildren: './pro/pro.module#ProModule'},
             {path: 'mqtt', loadChildren: './mqtt/mqtt.module#MqttModule'},
-            {path: 'apps', loadChildren: './apps/apps.module#AppsModule'}
+            {path: 'apps', loadChildren: './apps/apps.module#AppsModule'},
+            {path: 'rfid', loadChildren: './rfid/rfid.module#RfidModule'},
+            {path: 'opc', loadChildren: './opc/opc.module#OpcModule'}
         ]
     },
     // 全屏布局
