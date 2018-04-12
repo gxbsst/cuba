@@ -35,14 +35,14 @@ export class ListComponent implements OnInit {
     }
 
     fetch() {
-        this.cubaApp.invokeService('cuba_MqttService', 'mqtt').then(response => {
+        this.cubaApp.invokeService('sct_MqttService', 'mqtt').then(response => {
             this.data = JSON.parse(response);
         }, err => {
         });
     }
 
     query() {
-        this.cubaApp.query('cuba$Mqtt', 'mqtt-query', {topic: this.searchValue}).then((response) => {
+        this.cubaApp.query('sct$Mqtt', 'mqtt-query', {topic: this.searchValue}).then((response) => {
             this.data = response;
         }, err => {
 

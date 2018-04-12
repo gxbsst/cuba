@@ -1,0 +1,1 @@
+create unique index IDX_SCT_VT_OPC_SIGNAL_UNIQ_ITEM_ID on SCT_VT_OPC_SIGNAL (ITEM_ID) ;

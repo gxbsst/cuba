@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<screen-config xmlns="http://schemas.haulmont.com/cuba/screens.xsd">
+    <include file="/com/vtstar/sct/screens.xml"/>
+    <screen id="sct$Mqtt.browse"
+            template="/com/vtstar/sct/web/mqtt/mqtt-browse.xml"/>
+    <screen id="sct$Mqtt.edit"
+            template="/com/vtstar/sct/web/mqtt/mqtt-edit.xml"/>
+    <screen id="sct$RfidPort.browse"
+            template="/com/vtstar/sct/web/rfidport/rfid-port-browse.xml"/>
+    <screen id="sct$RfidPort.edit"
+            template="/com/vtstar/sct/web/rfidport/rfid-port-edit.xml"/>
+    <screen id="sct$RfidImpinj.browse"
+            template="/com/vtstar/sct/web/rfidimpinj/rfid-impinj-browse.xml"/>
+    <screen id="sct$RfidImpinj.edit"
+            template="/com/vtstar/sct/web/rfidimpinj/rfid-impinj-edit.xml"/>
+    <screen id="loginWindow"
+            template="/com/vtstar/sct/web/screens/ext-loginWindow.xml"/>
+
+    <screen id="sct$VtOPCSignal.browse"
+            template="/com/vtstar/sct/web/vtopcsignal/vt-opc-signal-browse.xml"/>
+    <screen id="sct$VtOPCSignal.edit"
+            template="/com/vtstar/sct/web/vtopcsignal/vt-opc-signal-edit.xml"/>
+</screen-config>

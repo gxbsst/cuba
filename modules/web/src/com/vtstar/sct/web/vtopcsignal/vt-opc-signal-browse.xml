@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.vtstar.sct.web.vtopcsignal.VtOPCSignalBrowse"
+        focusComponent="vtOPCSignalsTable"
+        lookupComponent="vtOPCSignalsTable"
+        messagesPack="com.vtstar.sct.web.vtopcsignal">
+    <dsContext>
+        <groupDatasource id="vtOPCSignalsDs"
+                         class="com.vtstar.sct.entity.VtOPCSignal"
+                         view="_local">
+            <query>
+                <![CDATA[select e from sct$VtOPCSignal e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="vtOPCSignalsTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="vtOPCSignalsTable"
+                datasource="vtOPCSignalsDs">
+            <properties include="(itemId)|(groupType)|(dataType)|(value)|(quality)|(updateCount)|(lastUpdateTime)|(description)"/>
+        </filter>
+        <groupTable id="vtOPCSignalsTable"
+                    width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="itemId"/>
+                <column id="groupType"/>
+                <column id="dataType"/>
+                <column id="value"/>
+                <column id="quality"/>
+                <column id="updateCount"/>
+                <column id="lastUpdateTime"/>
+                <column id="description"/>
+            </columns>
+            <rows datasource="vtOPCSignalsDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="vtOPCSignalsTable.create"/>
+                <button id="editBtn"
+                        action="vtOPCSignalsTable.edit"/>
+                <button id="removeBtn"
+                        action="vtOPCSignalsTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>

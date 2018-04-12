@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<services xmlns="http://schemas.haulmont.com/cuba/rest-services-v2.xsd">
-    <service name="cuba_MqttService">
-        <method name="mqtt"/>
-        <method name="create">
-            <param name="params"/>
-        </method>
-    </service>
-</services>

@@ -1,1 +1,7 @@
-
+-- begin SCT_RFID_PORT
+alter table SCT_RFID_PORT add constraint FK_SCT_RFID_PORT_RFID_IMPINJ foreign key (RFID_IMPINJ_ID) references SCT_RFID_IMPINJ(ID)^
+create index IDX_SCT_RFID_PORT_RFID_IMPINJ on SCT_RFID_PORT (RFID_IMPINJ_ID)^
+-- end SCT_RFID_PORT
+-- begin SCT_VT_OPC_SIGNAL
+create unique index IDX_SCT_VT_OPC_SIGNAL_UNIQ_ITEM_ID on SCT_VT_OPC_SIGNAL (ITEM_ID) ^
+-- end SCT_VT_OPC_SIGNAL

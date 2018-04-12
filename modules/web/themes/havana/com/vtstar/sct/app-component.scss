@@ -1,0 +1,5 @@
+@import "havana-ext";
+
+@mixin com_vtstar_sct {
+  @include com_vtstar_sct-havana-ext;
+}

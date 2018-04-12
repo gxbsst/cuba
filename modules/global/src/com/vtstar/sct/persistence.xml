@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+             version="2.0">
+    <persistence-unit name="sct"
+                      transaction-type="RESOURCE_LOCAL">
+        <class>com.vtstar.sct.entity.Mqtt</class>
+        <class>com.vtstar.sct.entity.RfidImpinj</class>
+        <class>com.vtstar.sct.entity.RfidPort</class>
+        <class>com.vtstar.sct.entity.VtOPCSignal</class>
+    </persistence-unit>
+</persistence>

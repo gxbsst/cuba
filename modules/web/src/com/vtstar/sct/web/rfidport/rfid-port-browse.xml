@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.vtstar.sct.web.rfidport.RfidPortBrowse"
+        focusComponent="rfidPortsTable"
+        lookupComponent="rfidPortsTable"
+        messagesPack="com.vtstar.sct.web.rfidport">
+    <dsContext>
+        <groupDatasource id="rfidPortsDs"
+                         class="com.vtstar.sct.entity.RfidPort"
+                         view="_local">
+            <query>
+                <![CDATA[select e from sct$RfidPort e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="rfidPortsTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="rfidPortsTable"
+                datasource="rfidPortsDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="rfidPortsTable"
+                    width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="name"/>
+                <column id="antenna"/>
+                <column id="valid_rssi"/>
+            </columns>
+            <rows datasource="rfidPortsDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="rfidPortsTable.create"/>
+                <button id="editBtn"
+                        action="rfidPortsTable.edit"/>
+                <button id="removeBtn"
+                        action="rfidPortsTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>

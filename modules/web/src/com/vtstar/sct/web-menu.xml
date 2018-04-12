@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<menu-config xmlns="http://schemas.haulmont.com/cuba/menu.xsd">
+    <menu id="application-cuba"
+          insertBefore="administration">
+        <item screen="sct$Mqtt.browse"/>
+        <menu id="RfidConfig"
+              icon="font-icon:WIFI">
+            <item screen="sct$RfidImpinj.browse"/>
+            <item screen="sct$RfidPort.browse"/>
+        </menu>
+    </menu>
+
+    <menu id="Basics">
+        <item screen="sct$VtOPCSignal.browse"/>
+
+    </menu>
+</menu-config>

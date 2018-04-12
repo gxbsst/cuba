@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<views xmlns="http://schemas.haulmont.com/cuba/view.xsd">
+    <view class="com.vtstar.sct.entity.Mqtt"
+          extends="_local"
+          name="mqtt-view">
+        <property name="createTs"/>
+        <property name="createdBy"/>
+        <property name="updateTs"/>
+        <property name="updatedBy"/>
+    </view>
+
+    <view class="com.vtstar.sct.entity.RfidImpinj"
+          extends="_local"
+          name="rfidImpinj-with-port-view">
+        <property name="port"
+                  view="_minimal">
+            <property name="name"/>
+            <property name="valid_rssi"/>
+        </property>
+    </view>
+
+</views>
