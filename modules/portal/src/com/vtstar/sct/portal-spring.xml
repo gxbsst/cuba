@@ -24,6 +24,10 @@
             <map>
                 <entry key="sct_MqttService"
                        value="com.vtstar.sct.service.MqttService"/>
+                <entry key="sct_OpcService"
+                       value="com.vtstar.sct.service.OpcService"/>
+                <entry key="sct_RfidService"
+                       value="com.vtstar.sct.service.RfidService"/>
             </map>
         </property>
     </bean>

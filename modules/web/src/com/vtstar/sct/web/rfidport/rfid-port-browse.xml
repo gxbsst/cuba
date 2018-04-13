@@ -34,6 +34,7 @@
                 <column id="name"/>
                 <column id="antenna"/>
                 <column id="valid_rssi"/>
+                <column id="mqtt_topics"/>
             </columns>
             <rows datasource="rfidPortsDs"/>
             <rowsCount/>

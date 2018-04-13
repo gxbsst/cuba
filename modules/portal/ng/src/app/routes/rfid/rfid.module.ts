@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { SharedModule } from '@shared/shared.module';
 import { RfidRoutingModule } from './rfid-routing.module';
 import {RfidIndexComponent} from './rfid-index/rfid-index.component';
+import { RfidDetailComponent } from './rfid-detail/rfid-detail.component';
 
 const COMPONENT_NOROUNT = [];
 
@@ -12,7 +13,8 @@ const COMPONENT_NOROUNT = [];
   ],
   declarations: [
       ...COMPONENT_NOROUNT,
-      RfidIndexComponent
+      RfidIndexComponent,
+      RfidDetailComponent
   ],
   entryComponents: COMPONENT_NOROUNT
 })

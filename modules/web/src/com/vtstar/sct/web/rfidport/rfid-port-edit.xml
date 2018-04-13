@@ -19,6 +19,7 @@
                     <field property="name"/>
                     <field property="antenna"/>
                     <field property="valid_rssi"/>
+                    <field property="mqtt_topics"/>
                 </column>
             </fieldGroup>
             <frame id="windowActions"

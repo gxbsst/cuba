@@ -1,0 +1,27 @@
+<div class="content__title">
+    <h1>RFID 天线</h1>
+</div>
+
+<nz-card [nzHoverable]="true" [nzBordered]="false">
+    <desc-list size="large" title="RFID" class="mb-lg">
+        <desc-list-item term="名称">{{item.name}}</desc-list-item>
+        <desc-list-item term="IP">{{item.ip}}</desc-list-item>
+        <desc-list-item term="SpecId">{{item.specId}}</desc-list-item>
+    </desc-list>
+
+    <simple-table [data]="rfidPortsData" [columns]="rfidPortsColumns">
+
+    </simple-table>
+
+</nz-card>
+
+<nz-divider class="mb-lg"></nz-divider>
+<div class="text-lg mb-md">MQTT</div>
+
+<nz-card [nzHoverable]="true" [nzBordered]="false">
+
+    <simple-table [data]="mqttData" [columns]="mqttColumns">
+
+    </simple-table>
+
+</nz-card>

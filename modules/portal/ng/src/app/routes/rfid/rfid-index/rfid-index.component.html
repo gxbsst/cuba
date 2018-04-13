@@ -1,3 +1,8 @@
-<div class="content__title">
-    <h1>RFID</h1>
-</div>
+<page-header [title]="'RFID'"></page-header>
+<simple-table #st [data]="data" [ps]="20" [columns]="columns">
+
+    <ng-template st-row="custom" let-item let-index="index">
+       <a (click)="goToDetail(item)">{{item.name}}</a>
+    </ng-template>
+
+</simple-table>

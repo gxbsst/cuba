@@ -7,6 +7,7 @@ import com.vtstar.sct.entity.Mqtt;
 import org.springframework.stereotype.Service;
 
 import javax.inject.Inject;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
@@ -20,7 +21,7 @@ public class MqttServiceBean implements MqttService {
 
     @Override
     public List<Mqtt> mqtt() {
-        LoadContext<Mqtt> loadContext = LoadContext.create(Mqtt.class).setQuery(LoadContext.createQuery("select e from cuba$Mqtt e order by e.createTs DESC")).setView("mqtt-view");
+        LoadContext<Mqtt> loadContext = LoadContext.create(Mqtt.class).setQuery(LoadContext.createQuery("select e from sct$Mqtt e order by e.createTs DESC")).setView("mqtt-view");
         return dataManager.loadList(loadContext);
     }
 
@@ -31,5 +32,18 @@ public class MqttServiceBean implements MqttService {
         mqtt.setMessage((String) params.get("message"));
         dataManager.commit(mqtt);
         return mqtt;
+    }
+
+    @Override
+    public List<Mqtt> query(String params) {
+        String[] p = params.split(";");
+        List<String> list =  Arrays.asList(p);
+
+        LoadContext<Mqtt> loadContext = LoadContext.create(Mqtt.class).setQuery(
+                LoadContext.createQuery("select e from sct$Mqtt e where e.topic in :topics order by e.createTs DESC")
+                        .setParameter("topics", list)
+        )
+                .setView("mqtt-view");
+        return dataManager.loadList(loadContext);
     }
 }

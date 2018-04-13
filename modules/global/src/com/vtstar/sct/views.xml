@@ -8,7 +8,6 @@
         <property name="updateTs"/>
         <property name="updatedBy"/>
     </view>
-
     <view class="com.vtstar.sct.entity.RfidImpinj"
           extends="_local"
           name="rfidImpinj-with-port-view">
@@ -16,7 +15,7 @@
                   view="_minimal">
             <property name="name"/>
             <property name="valid_rssi"/>
+            <property name="mqtt_topics"/>
         </property>
     </view>
-
 </views>

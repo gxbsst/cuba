@@ -11,4 +11,12 @@
                    type="java.lang.String"/>
         </params>
     </query>
+    <query entity="sct$VtOPCSignal"
+           name="vtOPCSignal-query"
+           view="_local">
+        <jpql>
+            <![CDATA[select e from sct$VtOPCSignal e]]>
+        </jpql>
+        <params/>
+    </query>
 </queries>

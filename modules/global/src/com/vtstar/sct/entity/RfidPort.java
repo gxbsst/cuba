@@ -9,6 +9,7 @@ import javax.persistence.Table;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Lob;
 
 @NamePattern("%s|antenna")
 @Table(name = "SCT_RFID_PORT")
@@ -32,6 +33,19 @@ public class RfidPort extends StandardEntity {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "RFID_IMPINJ_ID")
     protected RfidImpinj rfidImpinj;
+
+    @Lob
+    @Column(name = "MQTT_TOPICS")
+    protected String mqtt_topics;
+
+    public void setMqtt_topics(String mqtt_topics) {
+        this.mqtt_topics = mqtt_topics;
+    }
+
+    public String getMqtt_topics() {
+        return mqtt_topics;
+    }
+
 
     public void setRfidImpinj(RfidImpinj rfidImpinj) {
         this.rfidImpinj = rfidImpinj;

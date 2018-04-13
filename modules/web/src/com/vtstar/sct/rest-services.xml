@@ -5,5 +5,27 @@
             <param name="params"/>
         </method>
         <method name="mqtt"/>
+        <method name="query">
+            <param name="params"/>
+        </method>
+    </service>
+    <service name="sct_OpcService">
+        <method name="changeStatus">
+            <param name="itemId"/>
+        </method>
+        <method name="writeItems">
+            <param name="itemMap"/>
+        </method>
+        <method name="balanceZero"/>
+        <method name="writeOpc">
+            <param name="itemId"/>
+            <param name="value"/>
+        </method>
+        <method name="readOpc">
+            <param name="itemId"/>
+        </method>
+    </service>
+    <service name="sct_RfidService">
+        <method name="rfid"/>
     </service>
 </services>

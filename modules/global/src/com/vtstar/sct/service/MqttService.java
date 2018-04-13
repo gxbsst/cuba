@@ -10,4 +10,6 @@ public interface MqttService {
     String NAME = "sct_MqttService";
     public Mqtt create(Map params);
     public List<Mqtt> mqtt();
+
+    List<Mqtt> query(String params);
 }

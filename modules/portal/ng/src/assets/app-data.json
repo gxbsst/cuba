@@ -18,32 +18,26 @@
                 {
                     "text": "应用服务",
                     "i18n": "应用服务",
-                    "icon": "icon-magic-wand",
+                    "icon": "anticon anticon-appstore",
                     "link": "/apps/apps-list"
                 },
                 {
                     "text": "OPC",
                     "i18n": "OPC",
-                    "icon": "icon-magic-wand",
+                    "icon": "anticon anticon-dot-chart",
                     "link": "/opc/opc-index"
                 },
                 {
                     "text": "RFID",
                     "i18n": "RFID",
-                    "icon": "icon-magic-wand",
+                    "icon": "anticon anticon-barcode",
                     "link": "/rfid/rfid-index"
                 },
                 {
                     "text": "MQTT",
                     "i18n": "MQTT",
-                    "icon": "anticon-bars",
-                    "children": [
-                        {
-                            "text": "列表",
-                            "link": "/mqtt/list",
-                            "i18n": "列表"
-                        }
-                    ]
+                    "icon": "anticon anticon-tool",
+                    "link": "/mqtt/list"
                 },
                 {
                     "text": "仪表盘",

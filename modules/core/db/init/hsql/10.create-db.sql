@@ -49,6 +49,7 @@ create table SCT_RFID_PORT (
     ANTENNA integer,
     VALID_RSSI integer,
     RFID_IMPINJ_ID varchar(36),
+    MQTT_TOPICS longvarchar,
     --
     primary key (ID)
 )^

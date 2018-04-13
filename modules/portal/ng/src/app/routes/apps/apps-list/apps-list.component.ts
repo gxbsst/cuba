@@ -11,37 +11,19 @@ import {ElectronService} from 'ngx-electron';
 })
 export class AppsListComponent implements OnInit {
 
-    data = [
-        {
-            key: '1',
-            name: 'OPC',
-            status: 'closed',
-
-        }, {
-            key: '2',
-            name: 'SCT',
-            status: 'closed',
-
-        }, {
-            key: '3',
-            name: 'RFID',
-            status: 'closed',
-        },
-        {
-            key: '4',
-            name: 'PRINTER',
-            status: 'closed',
-        },
-        {
-            key: '5',
-            name: 'CUBA',
-            status: 'closed',
-        }
+    status = [
+        {index: 0, text: '关闭', value: false, type: 'default', checked: false},
+        {index: 1, text: '运行中', value: false, type: 'processing', checked: false},
     ];
-
     columns: SimpleTableColumn[] = [
         {title: '应用名', index: 'name'},
-        {title: '状态', index: 'status'},
+        {
+            title: '状态',
+            index: 'status',
+            render: 'status',
+            filters: this.status,
+            filter: () => true
+        },
         {
             title: '操作区',
             buttons: [
@@ -49,13 +31,39 @@ export class AppsListComponent implements OnInit {
                     text: '启动',
                     type: 'none',
                     click: (record: any) => this.install(record.name),
-                },
-                {
-                    text: '<a target="_blank" href="http://www.red.com">预览</a>',
-                    type: 'none',
                 }
-
             ]
+        }
+    ];
+    data = [
+        {
+            key: '1',
+            name: 'OPC',
+            statusType: 'default',
+            statusText: '关闭'
+        }, {
+            key: '2',
+            name: 'SCT',
+            statusType: 'default',
+            statusText: '关闭'
+
+        }, {
+            key: '3',
+            name: 'RFID',
+            statusType: 'default',
+            statusText: '关闭'
+        },
+        {
+            key: '4',
+            name: 'PRINTER',
+            statusType: 'default',
+            statusText: '关闭'
+        },
+        {
+            key: '5',
+            name: 'CUBA',
+            statusType: 'default',
+            statusText: '关闭'
         }
     ];
 
@@ -79,18 +87,52 @@ export class AppsListComponent implements OnInit {
             //     .catch(error => console.error(error));
 
             this.electron.ipcRenderer.on('appOPCStatus', (event, status) => {
-                this.data[0]['status'] = status;
+                debugger
+                if (status === 'closed') {
+                    this.data[0]['statusType'] = 'default';
+                    this.data[0]['statusText'] = '关闭';
+                } else {
+                    this.data[0]['statusType'] = 'processing';
+                    this.data[0]['statusText'] = '运行中';
+                }
             });
 
             this.electron.ipcRenderer.on('appSctStatus', (event, status) => {
-                this.data[1]['status'] = status;
+                if (status === 'closed') {
+                    this.data[1]['statusType'] = 'default';
+                    this.data[1]['statusText'] = '关闭';
+                } else {
+                    this.data[1]['statusType'] = 'processing';
+                    this.data[1]['statusText'] = '运行中';
+                }
             });
             this.electron.ipcRenderer.on('appRFIDStatus', (event, status) => {
-                this.data[2]['status'] = status;
+                if (status === 'closed') {
+                    this.data[2]['statusType'] = 'default';
+                    this.data[2]['statusText'] = '关闭';
+                } else {
+                    this.data[2]['statusType'] = 'processing';
+                    this.data[2]['statusText'] = '运行中';
+                }
             });
 
             this.electron.ipcRenderer.on('appPrinterStatus', (event, status) => {
-                this.data[3]['status'] = status;
+                if (status === 'closed') {
+                    this.data[3]['statusType'] = 'default';
+                    this.data[3]['statusText'] = '关闭';
+                } else {
+                    this.data[3]['statusType'] = 'processing';
+                    this.data[3]['statusText'] = '运行中';
+                }
+            });
+            this.electron.ipcRenderer.on('appCUBAStatus', (event, status) => {
+                if (status === 'closed') {
+                    this.data[4]['statusType'] = 'default';
+                    this.data[4]['statusText'] = '关闭';
+                } else {
+                    this.data[4]['statusType'] = 'processing';
+                    this.data[4]['statusText'] = '运行中';
+                }
             });
         }
     }
