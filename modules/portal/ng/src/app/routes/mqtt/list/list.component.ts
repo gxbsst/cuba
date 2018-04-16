@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {CubaApp} from '@cuba-platform/rest/dist-node/cuba';
 import {SimpleTableColumn} from '@delon/abc';
+import {Observable} from 'rxjs/Rx';
+import {MqttService} from '../../../service/MqttService';
+import {AppSettings} from '@core/AppSettings';
 
 @Component({
     selector: 'app-list',
@@ -13,36 +15,41 @@ export class ListComponent implements OnInit {
     searchValue = '';
 
     columns: SimpleTableColumn[] = [
-        { title: '时间', index: 'createTs' },
-        { title: '主题', render: 'custom' },
-        { title: '信息', index: 'message' },
+        {title: '时间', index: 'createTs'},
+        {title: '主题', render: 'custom'},
+        {title: '信息', index: 'message'},
     ];
 
-    constructor() {
-        this.cubaApp = new CubaApp('myApp', 'http://localhost:8088/app/rest/');
+    constructor(private mqttService: MqttService) {
+
     }
 
     ngOnInit() {
         this.fetch();
+
+        const timer = Observable.timer(5000, AppSettings.TIMER_PERIOD);
+        timer.subscribe(t => {
+            this.fetch();
+        });
     }
 
     search() {
         if (this.searchValue === '') {
             this.fetch();
         } else {
-            this.query();
+            this.query(this.searchValue);
         }
     }
 
     fetch() {
-        this.cubaApp.invokeService('sct_MqttService', 'mqtt').then(response => {
+        this.mqttService.fetch().then(response => {
             this.data = JSON.parse(response);
         }, err => {
         });
     }
 
-    query() {
-        this.cubaApp.query('sct$Mqtt', 'mqtt-query', {topic: this.searchValue}).then((response) => {
+    query(searchValue) {
+        this.mqttService.query(searchValue).then((response) => {
             this.data = response;
         }, err => {
 

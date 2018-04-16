@@ -2,8 +2,9 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {SimpleTableColumn} from '@delon/abc';
 import {StorageService} from '../../../service/StorageService';
-import {CubaApp} from '@cuba-platform/rest/dist-node/cuba';
 import {MqttService} from '../../../service/MqttService';
+import {Observable} from 'rxjs/Rx';
+import {AppSettings} from '@core/AppSettings';
 
 @Component({
     selector: 'app-rfid-detail',
@@ -34,17 +35,24 @@ export class RfidDetailComponent implements OnInit {
                 private router: Router,
                 private storageService: StorageService,
                 private mqttService: MqttService) {
-        this.cubaApp = new CubaApp('myApp', 'http://localhost:8088/app/rest/');
     }
 
     ngOnInit() {
         this.item = this.storageService.getData();
         this.rfidPortsData = this.item['port'];
+        this.query();
+
+        const timer = Observable.timer(5000, AppSettings.TIMER_PERIOD);
+        timer.subscribe(t => {
+            this.query();
+        });
+    }
+
+    private query() {
         this.mqttService.query(this.rfidPortsData[0].mqtt_topics).then(response => {
             this.mqttData = JSON.parse(response);
         }, err => {
 
         });
     }
-
 }

@@ -3,6 +3,9 @@ import {SimpleTableColumn} from '@delon/abc';
 import {CubaApp} from '@cuba-platform/rest/dist-node/cuba';
 import {Router} from '@angular/router';
 import {StorageService} from '../../../service/StorageService';
+import {RfidService} from '../../../service/RfidService';
+import {Observable} from 'rxjs/Rx';
+import {AppSettings} from '@core/AppSettings';
 
 @Component({
     selector: 'app-rfid-index',
@@ -11,7 +14,6 @@ import {StorageService} from '../../../service/StorageService';
 export class RfidIndexComponent implements OnInit {
 
     data = [];
-    cubaApp: any;
     searchValue = '';
 
     columns: SimpleTableColumn[] = [
@@ -29,12 +31,17 @@ export class RfidIndexComponent implements OnInit {
     ];
 
     constructor(private router: Router,
+                private rfidService: RfidService,
                 public storageService: StorageService) {
-        this.cubaApp = new CubaApp('myApp', 'http://localhost:8088/app/rest/');
     }
 
     ngOnInit() {
         this.fetch();
+
+        const timer = Observable.timer(5000, AppSettings.TIMER_PERIOD);
+        timer.subscribe(t => {
+            this.fetch();
+        });
     }
 
     search() {
@@ -46,14 +53,14 @@ export class RfidIndexComponent implements OnInit {
     }
 
     fetch() {
-        this.cubaApp.invokeService('sct_RfidService', 'rfid').then(response => {
+        this.rfidService.fetch().then(response => {
             this.data = JSON.parse(response);
         }, err => {
         });
     }
 
     query() {
-        this.cubaApp.query('sct$Mqtt', 'mqtt-query', {topic: this.searchValue}).then((response) => {
+        this.rfidService.query(this.searchValue).then((response) => {
             this.data = response;
         }, err => {
 

@@ -8,7 +8,7 @@ import {Router} from '@angular/router';
     selector: 'app-opc-index',
     templateUrl: './opc-index.component.html',
 })
-export class OpcIndexComponent implements OnInit, AfterViewInit {
+export class OpcIndexComponent implements OnInit {
 
     data = [];
 
@@ -24,10 +24,10 @@ export class OpcIndexComponent implements OnInit, AfterViewInit {
     }
 
     ngOnInit() {
-
+        this.fetch();
     }
 
-    ngAfterViewInit() {
+    fetch() {
         this.opcService.fetch().then(response => {
             this.data = response;
         }, err => {

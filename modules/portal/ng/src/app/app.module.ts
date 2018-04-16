@@ -30,6 +30,7 @@ import {StorageService} from './service/StorageService';
 import {MqttService} from './service/MqttService';
 import {OpcService} from './service/OpcService';
 import {AppsService} from './service/AppsService';
+import {RfidService} from './service/RfidService';
 
 registerLocaleData(localeZhHans);
 // JSON-Schema form
@@ -94,6 +95,7 @@ export function StartupServiceFactory(startupService: StartupService): Function 
         MqttService,
         OpcService,
         AppsService,
+        RfidService,
         {
             provide: APP_INITIALIZER,
             useFactory: StartupServiceFactory,

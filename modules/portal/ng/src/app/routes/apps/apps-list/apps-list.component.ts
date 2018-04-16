@@ -6,6 +6,7 @@ import {ElectronService} from 'ngx-electron';
 import {AppsService} from '../../../service/AppsService';
 // import {Observable} from 'rxjs/Observable';
 import {Observable} from 'rxjs/Rx';
+import {AppSettings} from '@core/AppSettings';
 
 @Component({
     selector: 'app-apps-list',
@@ -42,14 +43,14 @@ export class AppsListComponent implements OnInit {
     constructor(private commonService: CommonService,
                 public service: ElectronIpcService,
                 private electron: ElectronService,
-                private appsService: AppsService,) {
+                private appsService: AppsService) {
     }
 
     ngOnInit() {
 
         this.fetch();
 
-        const timer = Observable.timer(5000, 5000);
+        const timer = Observable.timer(5000, AppSettings.TIMER_PERIOD);
         timer.subscribe(t => {
             this.fetch();
         });

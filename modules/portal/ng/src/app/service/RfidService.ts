@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {CubaApp} from '@cuba-platform/rest/dist-node/cuba';
 
 @Injectable()
-export class MqttService {
+export class RfidService {
     cubaApp;
     data;
     constructor() {
@@ -10,11 +10,11 @@ export class MqttService {
     }
 
     query(queryString): Promise<any> {
-        return this.cubaApp.invokeService('sct_MqttService', 'query', {'params': queryString});
+        return this.cubaApp.query('sct$Mqtt', 'mqtt-query', {topic: queryString});
     }
 
     fetch() {
-        return this.cubaApp.invokeService('sct_MqttService', 'mqtt');
+        return this.cubaApp.invokeService('sct_RfidService', 'rfid');
     }
 
 }
