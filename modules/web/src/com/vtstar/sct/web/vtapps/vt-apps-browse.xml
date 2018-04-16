@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.vtstar.sct.web.vtapps.VtAppsBrowse"
+        focusComponent="vtAppsesTable"
+        lookupComponent="vtAppsesTable"
+        messagesPack="com.vtstar.sct.web.vtapps">
+    <dsContext>
+        <groupDatasource id="vtAppsesDs"
+                         class="com.vtstar.sct.entity.VtApps"
+                         view="_local">
+            <query>
+                <![CDATA[select e from sct$VtApps e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="vtAppsesTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="vtAppsesTable"
+                datasource="vtAppsesDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="vtAppsesTable"
+                    width="100%">
+            <actions>
+                <action id="create"
+                        openType="DIALOG"/>
+                <action id="edit"
+                        openType="DIALOG"/>
+                <action id="remove"/>
+                <action id="excel"/>
+                <action id="refresh"
+                        caption="msg://Refresh"
+                        invoke="onRefresh"/>
+                <!--<action id="start"-->
+                <!--caption="msg://start"-->
+                <!--invoke="onStart"/>-->
+            </actions>
+            <columns>
+                <column id="name"/>
+                <column id="ip"/>
+                <column id="port"/>
+                <column id="batPath"/>
+                <column id="description"/>
+                <column id="state"/>
+                <column id="status"/>
+            </columns>
+            <rows datasource="vtAppsesDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="vtAppsesTable.create"/>
+                <button id="editBtn"
+                        action="vtAppsesTable.edit"/>
+                <button id="removeBtn"
+                        action="vtAppsesTable.remove"/>
+                <button id="excelBtn"
+                        action="vtAppsesTable.excel"/>
+                <button id="refreshBtn"
+                        action="vtAppsesTable.refresh"/>
+                <!--<button id="startBtn"-->
+                <!--action="vtAppsesTable.start"/>-->
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>

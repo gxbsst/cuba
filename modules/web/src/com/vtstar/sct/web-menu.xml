@@ -12,6 +12,6 @@
 
     <menu id="Basics">
         <item screen="sct$VtOPCSignal.browse"/>
-
+        <item screen="sct$VtApps.browse"/>
     </menu>
 </menu-config>

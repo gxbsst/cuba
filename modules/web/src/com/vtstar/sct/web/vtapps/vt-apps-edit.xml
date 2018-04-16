@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editorCaption"
+        class="com.vtstar.sct.web.vtapps.VtAppsEdit"
+        datasource="vtAppsDs"
+        focusComponent="fieldGroup"
+        messagesPack="com.vtstar.sct.web.vtapps">
+    <dsContext>
+        <datasource id="vtAppsDs"
+                    class="com.vtstar.sct.entity.VtApps"
+                    view="_local"/>
+    </dsContext>
+    <dialogMode forceDialog="true"
+                width="700"/>
+    <layout spacing="true">
+        <groupBox spacing="true">
+            <fieldGroup id="fieldGroup"
+                        datasource="vtAppsDs"
+                        width="100%">
+                <column width="100%">
+                    <field property="name"
+                           width="90%"/>
+                    <field property="ip"
+                           width="90%"/>
+                    <field property="port"
+                           width="90%"/>
+                    <field property="batPath"
+                           width="90%"/>
+                    <field property="description"
+                           rows="5"
+                           width="90%"/>
+                    <field property="status"/>
+                </column>
+            </fieldGroup>
+            <frame id="windowActions"
+                   height="100%"
+                   screen="editWindowActions"/>
+        </groupBox>
+    </layout>
+</window>

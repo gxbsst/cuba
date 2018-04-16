@@ -28,4 +28,8 @@
     <service name="sct_RfidService">
         <method name="rfid"/>
     </service>
+    <service name="sct_VtAppsService">
+        <method name="query"/>
+        <method name="checkClientState"/>
+    </service>
 </services>

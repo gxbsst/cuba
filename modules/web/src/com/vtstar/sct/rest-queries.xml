@@ -19,4 +19,12 @@
         </jpql>
         <params/>
     </query>
+    <query entity="sct$VtApps"
+           name="vtApps-query"
+           view="vtApps-view">
+        <jpql>
+            <![CDATA[select * from sct$VtApps e]]>
+        </jpql>
+        <params/>
+    </query>
 </queries>

@@ -20,4 +20,9 @@
             template="/com/vtstar/sct/web/vtopcsignal/vt-opc-signal-browse.xml"/>
     <screen id="sct$VtOPCSignal.edit"
             template="/com/vtstar/sct/web/vtopcsignal/vt-opc-signal-edit.xml"/>
+
+    <screen id="sct$VtApps.browse"
+            template="com/vtstar/sct/web/vtapps/vt-apps-browse.xml"/>
+    <screen id="sct$VtApps.edit"
+            template="com/vtstar/sct/web/vtapps/vt-apps-edit.xml"/>
 </screen-config>

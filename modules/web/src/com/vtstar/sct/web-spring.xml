@@ -16,6 +16,8 @@
                        value="com.vtstar.sct.service.OpcService"/>
                 <entry key="sct_RfidService"
                        value="com.vtstar.sct.service.RfidService"/>
+                <entry key="sct_VtAppsService"
+                       value="com.vtstar.sct.service.VtAppsService"/>
             </map>
         </property>
     </bean>

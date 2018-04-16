@@ -29,6 +29,7 @@ import {ElectronIpcService} from './service/electronipc-service';
 import {StorageService} from './service/StorageService';
 import {MqttService} from './service/MqttService';
 import {OpcService} from './service/OpcService';
+import {AppsService} from './service/AppsService';
 
 registerLocaleData(localeZhHans);
 // JSON-Schema form
@@ -92,6 +93,7 @@ export function StartupServiceFactory(startupService: StartupService): Function 
         StorageService,
         MqttService,
         OpcService,
+        AppsService,
         {
             provide: APP_INITIALIZER,
             useFactory: StartupServiceFactory,

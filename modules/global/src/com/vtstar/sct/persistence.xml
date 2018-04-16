@@ -7,5 +7,6 @@
         <class>com.vtstar.sct.entity.RfidImpinj</class>
         <class>com.vtstar.sct.entity.RfidPort</class>
         <class>com.vtstar.sct.entity.VtOPCSignal</class>
+        <class>com.vtstar.sct.entity.VtApps</class>
     </persistence-unit>
 </persistence>

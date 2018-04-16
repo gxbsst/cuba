@@ -1,9 +1,11 @@
 import {Component, OnInit} from '@angular/core';
-import {_HttpClient} from '@delon/theme';
 import {SimpleTableColumn} from '@delon/abc';
 import {CommonService} from '../../../service/CommonService';
 import {ElectronIpcService} from '../../../service/electronipc-service';
 import {ElectronService} from 'ngx-electron';
+import {AppsService} from '../../../service/AppsService';
+// import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs/Rx';
 
 @Component({
     selector: 'app-apps-list',
@@ -35,106 +37,108 @@ export class AppsListComponent implements OnInit {
             ]
         }
     ];
-    data = [
-        {
-            key: '1',
-            name: 'OPC',
-            statusType: 'default',
-            statusText: '关闭'
-        }, {
-            key: '2',
-            name: 'SCT',
-            statusType: 'default',
-            statusText: '关闭'
-
-        }, {
-            key: '3',
-            name: 'RFID',
-            statusType: 'default',
-            statusText: '关闭'
-        },
-        {
-            key: '4',
-            name: 'PRINTER',
-            statusType: 'default',
-            statusText: '关闭'
-        },
-        {
-            key: '5',
-            name: 'CUBA',
-            statusType: 'default',
-            statusText: '关闭'
-        }
-    ];
+    data = [];
 
     constructor(private commonService: CommonService,
                 public service: ElectronIpcService,
                 private electron: ElectronService,
-                private http: _HttpClient) {
+                private appsService: AppsService,) {
     }
 
     ngOnInit() {
-        if (this.electron.ipcRenderer) {
-            // callback style
-            // si.cpu(function (data) {
-            //     console.log('CPU-Information:');
-            //     console.log(data);
-            // });
 
-            // promises style - new in version 3
-            // si.cpu()
-            //     .then(data => console.log(data))
-            //     .catch(error => console.error(error));
+        this.fetch();
 
-            this.electron.ipcRenderer.on('appOPCStatus', (event, status) => {
-                debugger
-                if (status === 'closed') {
-                    this.data[0]['statusType'] = 'default';
-                    this.data[0]['statusText'] = '关闭';
+        const timer = Observable.timer(5000, 5000);
+        timer.subscribe(t => {
+            this.fetch();
+        });
+
+        // if (this.electron.ipcRenderer) {
+        // callback style
+        // si.cpu(function (data) {
+        //     console.log('CPU-Information:');
+        //     console.log(data);
+        // });
+
+        // promises style - new in version 3
+        // si.cpu()
+        //     .then(data => console.log(data))
+        //     .catch(error => console.error(error));
+
+        // this.electron.ipcRenderer.on('appOPCStatus', (event, status) => {
+        //     debugger;
+        //     if (status === 'closed') {
+        //         this.data[0]['statusType'] = 'default';
+        //         this.data[0]['statusText'] = '关闭';
+        //     } else {
+        //         this.data[0]['statusType'] = 'processing';
+        //         this.data[0]['statusText'] = '运行中';
+        //     }
+        // });
+        //
+        // this.electron.ipcRenderer.on('appSctStatus', (event, status) => {
+        //     if (status === 'closed') {
+        //         this.data[1]['statusType'] = 'default';
+        //         this.data[1]['statusText'] = '关闭';
+        //     } else {
+        //         this.data[1]['statusType'] = 'processing';
+        //         this.data[1]['statusText'] = '运行中';
+        //     }
+        // });
+        // this.electron.ipcRenderer.on('appRFIDStatus', (event, status) => {
+        //     if (status === 'closed') {
+        //         this.data[2]['statusType'] = 'default';
+        //         this.data[2]['statusText'] = '关闭';
+        //     } else {
+        //         this.data[2]['statusType'] = 'processing';
+        //         this.data[2]['statusText'] = '运行中';
+        //     }
+        // });
+        //
+        // this.electron.ipcRenderer.on('appPrinterStatus', (event, status) => {
+        //     if (status === 'closed') {
+        //         this.data[3]['statusType'] = 'default';
+        //         this.data[3]['statusText'] = '关闭';
+        //     } else {
+        //         this.data[3]['statusType'] = 'processing';
+        //         this.data[3]['statusText'] = '运行中';
+        //     }
+        // });
+        // this.electron.ipcRenderer.on('appCUBAStatus', (event, status) => {
+        //     if (status === 'closed') {
+        //         this.data[4]['statusType'] = 'default';
+        //         this.data[4]['statusText'] = '关闭';
+        //     } else {
+        //         this.data[4]['statusType'] = 'processing';
+        //         this.data[4]['statusText'] = '运行中';
+        //     }
+        // });
+        // }
+    }
+
+    fetch() {
+        const self = this;
+        this.appsService.fetch().then(response => {
+            self.data = JSON.parse(response);
+
+
+            self.data.forEach(function (item, index, theArray) {
+                if (item.status === 'closed' || item.status === '') {
+                    item['statusType'] = 'default';
+                    item['statusText'] = '关闭';
                 } else {
-                    this.data[0]['statusType'] = 'processing';
-                    this.data[0]['statusText'] = '运行中';
+                    item['statusType'] = 'processing';
+                    item['statusText'] = '运行中';
                 }
+
+                theArray[index] = item;
             });
 
-            this.electron.ipcRenderer.on('appSctStatus', (event, status) => {
-                if (status === 'closed') {
-                    this.data[1]['statusType'] = 'default';
-                    this.data[1]['statusText'] = '关闭';
-                } else {
-                    this.data[1]['statusType'] = 'processing';
-                    this.data[1]['statusText'] = '运行中';
-                }
-            });
-            this.electron.ipcRenderer.on('appRFIDStatus', (event, status) => {
-                if (status === 'closed') {
-                    this.data[2]['statusType'] = 'default';
-                    this.data[2]['statusText'] = '关闭';
-                } else {
-                    this.data[2]['statusType'] = 'processing';
-                    this.data[2]['statusText'] = '运行中';
-                }
-            });
 
-            this.electron.ipcRenderer.on('appPrinterStatus', (event, status) => {
-                if (status === 'closed') {
-                    this.data[3]['statusType'] = 'default';
-                    this.data[3]['statusText'] = '关闭';
-                } else {
-                    this.data[3]['statusType'] = 'processing';
-                    this.data[3]['statusText'] = '运行中';
-                }
-            });
-            this.electron.ipcRenderer.on('appCUBAStatus', (event, status) => {
-                if (status === 'closed') {
-                    this.data[4]['statusType'] = 'default';
-                    this.data[4]['statusText'] = '关闭';
-                } else {
-                    this.data[4]['statusType'] = 'processing';
-                    this.data[4]['statusText'] = '运行中';
-                }
-            });
-        }
+        }, err => {
+
+        });
     }
 
     install(name: string) {
