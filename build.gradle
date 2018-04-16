@@ -30,7 +30,7 @@ def globalModule = project(':app-global')
 def coreModule = project(':app-core')
 def guiModule = project(':app-gui')
 def webModule = project(':app-web')
-def webThemesModule = project(':web-themes')
+def webThemesModule = project(':app-web-themes')
 def portalModule = project(':app-portal')
 def servletApi = 'org.apache.tomcat:tomcat-servlet-api:8.0.26'
 

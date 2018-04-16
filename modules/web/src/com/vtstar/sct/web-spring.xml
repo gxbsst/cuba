@@ -18,6 +18,8 @@
                        value="com.vtstar.sct.service.RfidService"/>
                 <entry key="sct_VtAppsService"
                        value="com.vtstar.sct.service.VtAppsService"/>
+                <entry key="sct_LoadDatasourceService"
+                       value="com.vtstar.sct.service.LoadDatasourceService"/>
             </map>
         </property>
     </bean>

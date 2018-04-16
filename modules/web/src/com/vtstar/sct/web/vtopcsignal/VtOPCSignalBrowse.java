@@ -3,6 +3,7 @@ package com.vtstar.sct.web.vtopcsignal;
 import com.haulmont.cuba.gui.components.AbstractLookup;
 import com.haulmont.cuba.gui.data.GroupDatasource;
 import com.vtstar.sct.entity.VtOPCSignal;
+import com.vtstar.sct.service.LoadDatasourceService;
 //import com.vtstar.sct.entity.VtOPCSignal;
 //import com.vtstar.sct.service.LoadDatasourceService;
 
@@ -13,8 +14,8 @@ public class VtOPCSignalBrowse extends AbstractLookup {
     @Inject
     private GroupDatasource<VtOPCSignal, UUID> vtOPCSignalsDs;
 
-//    @Inject
-//    private LoadDatasourceService loadDatasourceService;
+    @Inject
+    private LoadDatasourceService loadDatasourceService;
 
     /*@Override
     public void init(Map<String, Object> params) {
@@ -25,4 +26,9 @@ public class VtOPCSignalBrowse extends AbstractLookup {
             showNotification(msg, NotificationType.HUMANIZED);
         }
     }*/
+
+    public void loadDs() {
+        loadDatasourceService.loadOPCDatasource();
+        showNotification("导入数据成功！", NotificationType.HUMANIZED);
+    }
 }

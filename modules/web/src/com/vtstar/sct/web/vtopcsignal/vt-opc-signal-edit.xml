@@ -8,9 +8,12 @@
     <dsContext>
         <datasource id="vtOPCSignalDs"
                     class="com.vtstar.sct.entity.VtOPCSignal"
-                    view="_local"/>
+                    view="vtOPCSignal-with-logs-view">
+            <collectionDatasource id="logsDs"
+                                  property="update_logs"/>
+        </datasource>
     </dsContext>
-    <dialogMode forceDialog="true"
+    <dialogMode height="600"
                 width="800"/>
     <layout spacing="true">
         <groupBox spacing="true">
@@ -38,9 +41,29 @@
                            width="90%"/>
                 </column>
             </fieldGroup>
-            <frame id="windowActions"
-                   height="100%"
-                   screen="editWindowActions"/>
         </groupBox>
+        <groupBox id="updateLogsBox">
+            <table id="updateLogsTable"
+                   height="100%"
+                   width="100%">
+                <actions>
+                    <action id="create"/>
+                    <action id="edit"/>
+                    <action id="remove"/>
+                </actions>
+                <columns>
+                    <column id="value"/>
+                    <column id="recordTime" />
+                </columns>
+                <rows datasource="logsDs"/>
+                <buttonsPanel>
+                    <button action="updateLogsTable.create"/>
+                    <button action="updateLogsTable.edit"/>
+                    <button action="updateLogsTable.remove"/>
+                </buttonsPanel>
+            </table>
+        </groupBox>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
     </layout>
 </window>

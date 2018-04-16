@@ -24,4 +24,20 @@
           systemProperties="true">
         <property name="state"/>
     </view>
+    <view class="com.vtstar.sct.entity.VtOPCSignalUpdateLog"
+          extends="_local"
+          name="vtOPCSignalUpdateLog-view">
+        <property name="vtOPCSignal"
+                  view="_minimal"/>
+    </view>
+    <view class="com.vtstar.sct.entity.VtOPCSignal"
+          extends="_local"
+          name="vtOPCSignal-with-logs-view">
+        <property name="update_logs"
+                  view="_minimal">
+            <property name="itemId"/>
+            <property name="value"/>
+            <property name="recordTime"/>
+        </property>
+    </view>
 </views>

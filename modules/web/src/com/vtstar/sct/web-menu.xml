@@ -9,7 +9,6 @@
             <item screen="sct$RfidPort.browse"/>
         </menu>
     </menu>
-
     <menu id="Basics">
         <item screen="sct$VtOPCSignal.browse"/>
         <item screen="sct$VtApps.browse"/>

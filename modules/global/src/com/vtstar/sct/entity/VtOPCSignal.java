@@ -5,6 +5,7 @@ import com.haulmont.cuba.core.entity.StandardEntity;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @NamePattern("%s|itemId")
 @Table(name = "SCT_VT_OPC_SIGNAL")
@@ -14,6 +15,9 @@ public class VtOPCSignal extends StandardEntity {
 
     @Column(name = "ITEM_ID", unique = true)
     protected String itemId;
+
+    @OneToMany(mappedBy = "vtOPCSignal")
+    protected List<VtOPCSignalUpdateLog> update_logs;
 
     @Column(name = "GROUP_TYPE")
     protected String groupType;
@@ -38,6 +42,15 @@ public class VtOPCSignal extends StandardEntity {
 
     @Column(name = "DESCRIPTION")
     protected String description;
+
+    public void setUpdate_logs(List<VtOPCSignalUpdateLog> update_logs) {
+        this.update_logs = update_logs;
+    }
+
+    public List<VtOPCSignalUpdateLog> getUpdate_logs() {
+        return update_logs;
+    }
+
 
     public void setDescription(String description) {
         this.description = description;

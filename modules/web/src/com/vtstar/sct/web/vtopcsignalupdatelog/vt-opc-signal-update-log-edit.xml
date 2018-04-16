@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editorCaption"
+        class="com.vtstar.sct.web.vtopcsignalupdatelog.VtOPCSignalUpdateLogEdit"
+        datasource="vtOPCSignalUpdateLogDs"
+        focusComponent="fieldGroup"
+        messagesPack="com.vtstar.sct.web.vtopcsignalupdatelog">
+    <dsContext>
+        <datasource id="vtOPCSignalUpdateLogDs"
+                    class="com.vtstar.sct.entity.VtOPCSignalUpdateLog"
+                    view="_local"/>
+    </dsContext>
+    <dialogMode forceDialog="true"
+                width="800"/>
+    <layout expand="windowActions"
+            spacing="true">
+        <fieldGroup id="fieldGroup"
+                    datasource="vtOPCSignalUpdateLogDs">
+            <column width="250px">
+                <field property="logNumber"/>
+                <field property="itemId"/>
+                <field property="value"/>
+                <field property="recordTime"/>
+            </column>
+        </fieldGroup>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>

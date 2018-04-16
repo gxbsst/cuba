@@ -29,6 +29,7 @@
                 <action id="create"/>
                 <action id="edit"/>
                 <action id="remove"/>
+                <action id="loadDs"/>
             </actions>
             <columns>
                 <column id="itemId"/>
@@ -50,6 +51,9 @@
                         action="vtOPCSignalsTable.edit"/>
                 <button id="removeBtn"
                         action="vtOPCSignalsTable.remove"/>
+                <button id="loadDs"
+                        caption="msg://loadDs"
+                        invoke="loadDs"/>
             </buttonsPanel>
         </groupTable>
     </layout>

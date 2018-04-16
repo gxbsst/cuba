@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.vtstar.sct.web.vtopcsignalupdatelog.VtOPCSignalUpdateLogBrowse"
+        focusComponent="vtOPCSignalUpdateLogsTable"
+        lookupComponent="vtOPCSignalUpdateLogsTable"
+        messagesPack="com.vtstar.sct.web.vtopcsignalupdatelog">
+    <dsContext>
+        <groupDatasource id="vtOPCSignalUpdateLogsDs"
+                         class="com.vtstar.sct.entity.VtOPCSignalUpdateLog"
+                         view="_local">
+            <query>
+                <![CDATA[select e from sct$VtOPCSignalUpdateLog e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="vtOPCSignalUpdateLogsTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="vtOPCSignalUpdateLogsTable"
+                datasource="vtOPCSignalUpdateLogsDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="vtOPCSignalUpdateLogsTable"
+                    width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+            </actions>
+            <columns>
+                <column id="logNumber"/>
+                <column id="itemId"/>
+                <column id="value"/>
+                <column id="recordTime"/>
+            </columns>
+            <rows datasource="vtOPCSignalUpdateLogsDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="vtOPCSignalUpdateLogsTable.create"/>
+                <button id="editBtn"
+                        action="vtOPCSignalUpdateLogsTable.edit"/>
+                <button id="removeBtn"
+                        action="vtOPCSignalUpdateLogsTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>

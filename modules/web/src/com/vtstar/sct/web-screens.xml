@@ -15,14 +15,16 @@
             template="/com/vtstar/sct/web/rfidimpinj/rfid-impinj-edit.xml"/>
     <screen id="loginWindow"
             template="/com/vtstar/sct/web/screens/ext-loginWindow.xml"/>
-
     <screen id="sct$VtOPCSignal.browse"
             template="/com/vtstar/sct/web/vtopcsignal/vt-opc-signal-browse.xml"/>
     <screen id="sct$VtOPCSignal.edit"
             template="/com/vtstar/sct/web/vtopcsignal/vt-opc-signal-edit.xml"/>
-
     <screen id="sct$VtApps.browse"
             template="com/vtstar/sct/web/vtapps/vt-apps-browse.xml"/>
     <screen id="sct$VtApps.edit"
             template="com/vtstar/sct/web/vtapps/vt-apps-edit.xml"/>
+    <screen id="sct$VtOPCSignalUpdateLog.browse"
+            template="com/vtstar/sct/web/vtopcsignalupdatelog/vt-opc-signal-update-log-browse.xml"/>
+    <screen id="sct$VtOPCSignalUpdateLog.edit"
+            template="com/vtstar/sct/web/vtopcsignalupdatelog/vt-opc-signal-update-log-edit.xml"/>
 </screen-config>

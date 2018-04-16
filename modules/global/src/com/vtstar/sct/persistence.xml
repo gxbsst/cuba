@@ -8,5 +8,6 @@
         <class>com.vtstar.sct.entity.RfidPort</class>
         <class>com.vtstar.sct.entity.VtOPCSignal</class>
         <class>com.vtstar.sct.entity.VtApps</class>
+        <class>com.vtstar.sct.entity.VtOPCSignalUpdateLog</class>
     </persistence-unit>
 </persistence>
