@@ -4,22 +4,18 @@ import com.haulmont.cuba.gui.components.AbstractLookup;
 import com.haulmont.cuba.gui.components.Component;
 import com.haulmont.cuba.gui.components.GroupTable;
 import com.haulmont.cuba.gui.data.GroupDatasource;
-import com.haulmont.cuba.gui.executors.BackgroundTask;
-import com.haulmont.cuba.gui.executors.BackgroundTaskHandler;
 import com.haulmont.cuba.gui.executors.BackgroundWorker;
-import com.haulmont.cuba.gui.executors.TaskLifeCycle;
 import com.vtstar.sct.entity.VtApps;
-//import com.vtstar.sct.event.NotificationEvent;
-//import com.vtstar.sct.service.ApplicationEventProducerService;
+import com.vtstar.sct.service.LoadDatasourceService;
 import org.slf4j.Logger;
 
 import javax.inject.Inject;
 import java.io.IOException;
-import java.net.InetSocketAddress;
-import java.net.Socket;
 import java.util.Collection;
 import java.util.UUID;
-import java.util.concurrent.TimeUnit;
+
+//import com.vtstar.sct.event.NotificationEvent;
+//import com.vtstar.sct.service.ApplicationEventProducerService;
 
 public class VtAppsBrowse extends AbstractLookup {
 
@@ -32,7 +28,10 @@ public class VtAppsBrowse extends AbstractLookup {
     @Inject
     private Logger log;
 
-//    @Inject
+    @Inject
+    private LoadDatasourceService loadDatasourceService;
+
+    //    @Inject
 //    private ApplicationEventProducerService applicationEventProducerService;
 
     @Override
@@ -47,6 +46,11 @@ public class VtAppsBrowse extends AbstractLookup {
         vtAppsesDs.refresh();
         Collection<VtApps> items = vtAppsesDs.getItems();
 //        checkClientStateTask(items);
+    }
+
+    public void loadDs() {
+        loadDatasourceService.loadAppsDatasource();
+        showNotification("导入数据成功！", NotificationType.HUMANIZED);
     }
 
     // TODO:

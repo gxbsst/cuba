@@ -29,6 +29,10 @@
           name="vtOPCSignalUpdateLog-view">
         <property name="vtOPCSignal"
                   view="_minimal"/>
+        <property name="createTs"/>
+        <property name="createdBy"/>
+        <property name="updateTs"/>
+        <property name="updatedBy"/>
     </view>
     <view class="com.vtstar.sct.entity.VtOPCSignal"
           extends="_local"
@@ -39,5 +43,10 @@
             <property name="value"/>
             <property name="recordTime"/>
         </property>
+    </view>
+
+    <view class="com.vtstar.sct.entity.VtBuhlerBin"
+          extends="_local"
+          name="vtBuhlerBin-with-material-view">
     </view>
 </views>

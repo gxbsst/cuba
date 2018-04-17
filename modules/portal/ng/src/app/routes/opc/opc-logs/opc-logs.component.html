@@ -1,0 +1,16 @@
+<div class="content__title">
+    <h1>OPC 日志</h1>
+</div>
+
+<nz-card [nzHoverable]="true" [nzBordered]="false">
+    <desc-list size="large" title="RFID" class="mb-lg">
+        <desc-list-item term="名称">{{item.itemId}}</desc-list-item>
+        <desc-list-item term="值">{{item.value}}</desc-list-item>
+        <desc-list-item term="描述">{{item.description}}</desc-list-item>
+    </desc-list>
+
+    <simple-table [data]="logsData" [columns]="logsColumns">
+
+    </simple-table>
+
+</nz-card>

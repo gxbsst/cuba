@@ -32,6 +32,7 @@ import {OpcService} from './service/OpcService';
 import {AppsService} from './service/AppsService';
 import {RfidService} from './service/RfidService';
 
+
 registerLocaleData(localeZhHans);
 // JSON-Schema form
 // import { JsonSchemaModule } from '@shared/json-schema/json-schema.module';
@@ -58,6 +59,7 @@ export function StartupServiceFactory(startupService: StartupService): Function 
         SharedModule,
         LayoutModule,
         RoutesModule,
+
         // i18n
         TranslateModule.forRoot({
             loader: {

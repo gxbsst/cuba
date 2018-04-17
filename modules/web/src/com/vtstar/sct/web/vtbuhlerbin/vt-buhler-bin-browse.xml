@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.vtstar.sct.web.vtbuhlerbin.VtBuhlerBinBrowse"
+        focusComponent="vtBuhlerBinsTable"
+        lookupComponent="vtBuhlerBinsTable"
+        messagesPack="com.vtstar.sct.web.vtbuhlerbin">
+    <dsContext>
+        <groupDatasource id="vtBuhlerBinsDs"
+                         class="com.vtstar.sct.entity.VtBuhlerBin"
+                         view="vtBuhlerBin-with-material-view">
+            <query>
+                <![CDATA[select e from sct$VtBuhlerBin e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="vtBuhlerBinsTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="vtBuhlerBinsTable"
+                datasource="vtBuhlerBinsDs">
+            <properties include="(canNo)|(canName)|(type)|(opened)"/>
+        </filter>
+        <groupTable id="vtBuhlerBinsTable"
+                    width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+                <action id="loadDs"/>
+                <action id="loadDsTest"/>
+                <action id="updateBinTest"/>
+            </actions>
+            <columns>
+                <column id="canNo"/>
+                <column id="canName"/>
+                <column id="type"/>
+                <column id="canCapacity"/>
+                <column id="nominalRemainingQuantity"/>
+                <column id="maxQuantity"/>
+                <column id="actualRemainingQuantity"/>
+                <column id="opened"/>
+                <column id="invCode"/>
+                <column id="status"/>
+            </columns>
+            <rows datasource="vtBuhlerBinsDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="vtBuhlerBinsTable.create"/>
+                <button id="editBtn"
+                        action="vtBuhlerBinsTable.edit"/>
+                <button id="removeBtn"
+                        action="vtBuhlerBinsTable.remove"/>
+                <button id="loadDs"
+                        caption="msg://loadDs"
+                        invoke="loadDs"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>

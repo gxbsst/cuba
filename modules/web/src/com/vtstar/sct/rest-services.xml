@@ -32,4 +32,10 @@
         <method name="query"/>
         <method name="checkClientState"/>
     </service>
+    <service name="sct_VtBuhlerBinService">
+        <method name="updateBinCoverStatus">
+            <param name="canNo"/>
+            <param name="status"/>
+        </method>
+    </service>
 </services>

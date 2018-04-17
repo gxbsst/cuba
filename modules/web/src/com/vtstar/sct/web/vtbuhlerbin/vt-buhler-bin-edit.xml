@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editorCaption"
+        class="com.vtstar.sct.web.vtbuhlerbin.VtBuhlerBinEdit"
+        datasource="vtBuhlerBinDs"
+        focusComponent="fieldGroup"
+        messagesPack="com.vtstar.sct.web.vtbuhlerbin">
+    <dsContext>
+        <datasource id="vtBuhlerBinDs"
+                    class="com.vtstar.sct.entity.VtBuhlerBin"
+                    view="vtBuhlerBin-with-material-view"/>
+    </dsContext>
+    <dialogMode forceDialog="true"
+                width="800"/>
+    <layout spacing="true">
+        <groupBox spacing="true">
+            <fieldGroup id="fieldGroup"
+                        align="TOP_CENTER"
+                        datasource="vtBuhlerBinDs"
+                        width="100%">
+                <column width="100%">
+                    <field property="canNo"
+                           width="90%"/>
+                    <field property="type"
+                           width="90%"/>
+                    <field property="canCapacity"
+                           width="90%"/>
+                    <field property="maxQuantity"
+                           width="90%"/>
+                    <field property="invCode"
+                           width="90%"/>
+                </column>
+                <column width="100%">
+                    <field property="canName"
+                           width="90%"/>
+                    <field property="nominalRemainingQuantity"
+                           width="90%"/>
+                    <field property="actualRemainingQuantity"
+                           width="90%"/>
+                    <field property="opened"
+                           width="90%"/>
+                    <field property="status"
+                           width="90%"/>
+                </column>
+            </fieldGroup>
+            <frame id="windowActions"
+                   height="100%"
+                   screen="editWindowActions"/>
+        </groupBox>
+    </layout>
+</window>

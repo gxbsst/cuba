@@ -24,6 +24,8 @@
             <properties include=".*"/>
         </filter>
         <groupTable id="vtAppsesTable"
+                    editable="true"
+                    multiselect="true"
                     width="100%">
             <actions>
                 <action id="create"
@@ -35,9 +37,7 @@
                 <action id="refresh"
                         caption="msg://Refresh"
                         invoke="onRefresh"/>
-                <!--<action id="start"-->
-                <!--caption="msg://start"-->
-                <!--invoke="onStart"/>-->
+                <action id="loadDs"/>
             </actions>
             <columns>
                 <column id="name"/>
@@ -62,8 +62,9 @@
                         action="vtAppsesTable.excel"/>
                 <button id="refreshBtn"
                         action="vtAppsesTable.refresh"/>
-                <!--<button id="startBtn"-->
-                <!--action="vtAppsesTable.start"/>-->
+                <button id="loadDs"
+                        caption="msg://loadDs"
+                        invoke="loadDs"/>
             </buttonsPanel>
         </groupTable>
     </layout>

@@ -13,4 +13,11 @@ export class OpcService {
         return this.cubaApp.query('sct$VtOPCSignal', 'vtOPCSignal-query');
     }
 
+    fetchItemLogs(vtOPCSignalId: String): Promise<any> {
+        return this.cubaApp.query('sct$VtOPCSignalUpdateLog', 'vtOPCSignalUpdateLog-query', {'vtOPCSignalId': vtOPCSignalId});
+    }
+
+    fetchBuhlerBins(): Promise<any> {
+        return this.cubaApp.query('sct$VtBuhlerBin', 'vtBuhlerBin-query');
+    }
 }

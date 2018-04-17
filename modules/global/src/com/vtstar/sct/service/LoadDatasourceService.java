@@ -9,6 +9,13 @@ public interface LoadDatasourceService {
 
     //导入OPCSignal数据
     String loadOPCDatasource();
+    String loadAppsDatasource();
+
+    //导入Apps数据
+    String loadBuhlerBinDatasource();
+
+    void loadRfidConfigData();
+
 
     //导入包装规格信息
     //String loadPackageSpecDatasource();

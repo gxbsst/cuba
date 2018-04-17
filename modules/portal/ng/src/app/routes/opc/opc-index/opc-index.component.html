@@ -2,6 +2,33 @@
     <h1>OPC</h1>
 </div>
 
+<div nz-row [nzGutter]="24" class="pt-lg" >
+    <div nz-col nzXs="24" nzSm="12" nzMd="12" nzLg="3" *ngFor="let bin of binData">
+        <g2-card
+            [title]="bin.canNo"
+            contentHeight="100px"
+            >
+            <div class="pb-sm">
+                <div *ngIf="bin.status ==='close'; else openTemplate">
+                    <nz-badge [nzStatus]="'error'"></nz-badge>
+                    仓盖关闭
+                </div>
+
+                <ng-template #openTemplate>
+                    <nz-badge [nzStatus]="'success'"></nz-badge>
+                    仓盖打开
+                </ng-template>
+
+            </div>
+            <vt-gauge [value]="bin.actualRemainingQuantity"></vt-gauge>
+            <!--<g2-gauge  title="{{bin.canNo}}" height="164" [percent]="bin.actualRemainingQuantity"></g2-gauge>-->
+        </g2-card>
+
+
+    </div>
+
+</div>
+
 <simple-table #st [data]="data" [ps]="20" [columns]="columns">
     <ng-template st-row="custom" let-item let-index="index">
         <a (click)="goToDetail(item)">{{item.itemId}}</a>

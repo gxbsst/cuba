@@ -20,6 +20,7 @@
                        value="com.vtstar.sct.service.VtAppsService"/>
                 <entry key="sct_LoadDatasourceService"
                        value="com.vtstar.sct.service.LoadDatasourceService"/>
+                <entry key="sct_VtBuhlerBinService" value="com.vtstar.sct.service.VtBuhlerBinService"/>
             </map>
         </property>
     </bean>

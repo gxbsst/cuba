@@ -13,7 +13,7 @@
                                   property="port"/>
         </datasource>
     </dsContext>
-    <dialogMode forceDialog="true"/>
+    <dialogMode forceDialog="false"/>
     <layout expand="windowActions"
             spacing="true">
         <fieldGroup id="fieldGroup"
@@ -36,17 +36,20 @@
                    height="200px"
                    width="100%">
                 <actions>
-                    <action id="add"/>
+                    <action id="create"/>
+                    <action id="edit"/>
                     <action id="remove"/>
                 </actions>
                 <columns>
                     <column id="name"/>
                     <column id="antenna"/>
                     <column id="valid_rssi"/>
+                    <column id="mqtt_topics"/>
                 </columns>
                 <rows datasource="portDs"/>
                 <buttonsPanel>
-                    <button action="portTable.add"/>
+                    <button action="portTable.create"/>
+                    <button action="portTable.edit"/>
                     <button action="portTable.remove"/>
                 </buttonsPanel>
             </table>

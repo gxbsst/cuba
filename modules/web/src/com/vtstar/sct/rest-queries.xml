@@ -27,4 +27,23 @@
         </jpql>
         <params/>
     </query>
+    <query entity="sct$VtOPCSignalUpdateLog"
+           name="vtOPCSignalUpdateLog-query"
+           view="vtOPCSignalUpdateLog-view">
+        <jpql>
+            <![CDATA[select e from sct$VtOPCSignalUpdateLog e where e.vtOPCSignal.id=:vtOPCSignalId order by e.createTs DESC]]>
+        </jpql>
+        <params>
+            <param name="vtOPCSignalId"
+                   type="java.util.UUID"/>
+        </params>
+    </query>
+    <query entity="sct$VtBuhlerBin"
+           name="vtBuhlerBin-query"
+           view="vtBuhlerBin-with-material-view">
+        <jpql>
+            <![CDATA[select e from sct$VtBuhlerBin e]]>
+        </jpql>
+        <params/>
+    </query>
 </queries>

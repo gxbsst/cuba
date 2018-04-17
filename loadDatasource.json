@@ -1,0 +1,435 @@
+{
+  "buhlerBin": [
+    {
+      "nominalRemainingQuantity": 500,
+      "maxQuantity": 7000,
+      "opened": true,
+      "canNo": "1#",
+      "binlm": "Binlm.1",
+      "binWeight": "BinWeight.1",
+      "canName": "B-01",
+      "type":"Carrier_Material_Bin",
+      "invCode": "B-01",
+      "errorRemainingQuantity": 20,
+      "canCapacity": 10000,
+      "actualRemainingQuantity": 1539.15
+    },
+    {
+      "nominalRemainingQuantity": 500,
+      "maxQuantity": 8000,
+      "opened": true,
+      "canNo": "2#",
+      "binlm": "Binlm.2",
+      "binWeight": "BinWeight.2",
+      "canName": "B-07",
+      "type":"Carrier_Material_Bin",
+      "invCode": "B-07",
+      "errorRemainingQuantity": 20,
+      "canCapacity": 10000,
+      "actualRemainingQuantity": 2619.15
+    },
+    {
+      "nominalRemainingQuantity": 500,
+      "maxQuantity": 4500,
+      "opened": true,
+      "canNo": "3#",
+      "binlm": "Binlm.3",
+      "binWeight": "BinWeight.3",
+      "canName": "A-1401",
+      "type":"Large_Material_Bin",
+      "invCode": "A-1401",
+      "errorRemainingQuantity": 20,
+      "canCapacity": 10000,
+      "actualRemainingQuantity": 348.45
+    },
+    {
+      "nominalRemainingQuantity": 500,
+      "maxQuantity": 4500,
+      "opened": true,
+      "canNo": "4#",
+      "binlm": "Binlm.4",
+      "binWeight": "BinWeight.4",
+      "canName": "B-0102",
+      "type":"Large_Material_Bin",
+      "invCode": "B-0102",
+      "errorRemainingQuantity": 20,
+      "canCapacity": 10000,
+      "actualRemainingQuantity": 1485.45
+    },
+    {
+      "nominalRemainingQuantity": 500,
+      "maxQuantity": 5000,
+      "opened": true,
+      "canNo": "5#",
+      "binlm": "Binlm.5",
+      "binWeight": "BinWeight.5",
+      "canName": "A-12",
+      "type":"Large_Material_Bin",
+      "invCode": "A-12",
+      "errorRemainingQuantity": 20,
+      "canCapacity": 10000,
+      "actualRemainingQuantity": 2604.85
+    },
+    {
+      "nominalRemainingQuantity": 500,
+      "maxQuantity": 3000,
+      "opened": true,
+      "canNo": "6#",
+      "binlm": "Binlm.6",
+      "binWeight": "BinWeight.6",
+      "canName": "A-1701",
+      "type":"Large_Material_Bin",
+      "invCode": "A-1701",
+      "errorRemainingQuantity": 20,
+      "canCapacity": 10000,
+      "actualRemainingQuantity": 187.45
+    },
+    {
+      "nominalRemainingQuantity": 500,
+      "maxQuantity": 3000,
+      "opened": true,
+      "canNo": "7#",
+      "binlm": "Binlm.7",
+      "binWeight": "BinWeight.7",
+      "canName": "A-15",
+      "type":"Large_Material_Bin",
+      "invCode": "A-15",
+      "errorRemainingQuantity": 20,
+      "canCapacity": 10000,
+      "actualRemainingQuantity": 0
+    },
+    {
+      "nominalRemainingQuantity": 500,
+      "maxQuantity": 3500,
+      "opened": true,
+      "canNo": "8#",
+      "binlm": "Binlm.8",
+      "binWeight": "BinWeight.8",
+      "canName": "A-09",
+      "type":"Large_Material_Bin",
+      "invCode": "A-09",
+      "errorRemainingQuantity": 20,
+      "canCapacity": 10000,
+      "actualRemainingQuantity": 2598.50
+    },
+    {
+      "nominalRemainingQuantity": 500,
+      "maxQuantity": 1100,
+      "opened": true,
+      "canNo": "9#",
+      "binlm": "Binlm.9",
+      "binWeight": "BinWeight.9",
+      "canName": "A-1301",
+      "type":"Large_Material_Bin",
+      "invCode": "A-1301",
+      "errorRemainingQuantity": 20,
+      "canCapacity": 10000,
+      "actualRemainingQuantity": 401.45
+    },
+    {
+      "nominalRemainingQuantity": 500,
+      "maxQuantity": 1000,
+      "opened": true,
+      "canNo": "10#",
+      "binlm": "Binlm.10",
+      "binWeight": "BinWeight.10",
+      "canName": "A-05",
+      "type":"Large_Material_Bin",
+      "invCode": "A-05",
+      "errorRemainingQuantity": 20,
+      "canCapacity": 10000,
+      "actualRemainingQuantity": 408.99
+    },
+    {
+      "nominalRemainingQuantity": 500,
+      "maxQuantity": 1000,
+      "opened": true,
+      "canNo": "11#",
+      "binlm": "Binlm.11",
+      "binWeight": "BinWeight.11",
+      "canName": "A-03",
+      "type":"Large_Material_Bin",
+      "invCode": "A-03",
+      "errorRemainingQuantity": 20,
+      "canCapacity": 10000,
+      "actualRemainingQuantity": 282.25
+    },
+    {
+      "nominalRemainingQuantity": 500,
+      "maxQuantity": 1000,
+      "opened": true,
+      "canNo": "12#",
+      "binlm": "Binlm.12",
+      "binWeight": "BinWeight.12",
+      "canName": "A-11",
+      "type":"Large_Material_Bin",
+      "invCode": "A-11",
+      "errorRemainingQuantity": 20,
+      "canCapacity": 10000,
+      "actualRemainingQuantity": 591.26
+    },
+    {
+      "nominalRemainingQuantity": 500,
+      "maxQuantity": 1000,
+      "opened": true,
+      "canNo": "13#",
+      "binlm": "Binlm.13",
+      "binWeight": "BinWeight.13",
+      "canName": "A-0102",
+      "type":"Large_Material_Bin",
+      "invCode": "A-0102",
+      "errorRemainingQuantity": 20,
+      "canCapacity": 10000,
+      "actualRemainingQuantity": 795.48
+    },
+    {
+      "nominalRemainingQuantity": 500,
+      "maxQuantity": 1000,
+      "opened": true,
+      "canNo": "14#",
+      "binlm": "Binlm.14",
+      "binWeight": "BinWeight.14",
+      "canName": "A-0101",
+      "type":"Large_Material_Bin",
+      "invCode": "A-0101",
+      "errorRemainingQuantity": 20,
+      "canCapacity": 10000,
+      "actualRemainingQuantity": 315.00
+    },
+    {
+      "nominalRemainingQuantity": 500,
+      "maxQuantity": 600,
+      "opened": true,
+      "canNo": "15#",
+      "binlm": "Binlm.15",
+      "binWeight": "BinWeight.15",
+      "canName": "A-04",
+      "type":"Large_Material_Bin",
+      "invCode": "A-04",
+      "errorRemainingQuantity": 20,
+      "canCapacity": 10000,
+      "actualRemainingQuantity": 334.02
+    },
+    {
+      "nominalRemainingQuantity": 500,
+      "maxQuantity": 600,
+      "opened": true,
+      "canNo": "16#",
+      "binlm": "Binlm.16",
+      "binWeight": "BinWeight.16",
+      "canName": "A-02",
+      "type":"Large_Material_Bin",
+      "invCode": "A-02",
+      "errorRemainingQuantity": 20,
+      "canCapacity": 10000,
+      "actualRemainingQuantity": 630.82
+    },
+    {
+      "nominalRemainingQuantity": 500,
+      "maxQuantity": 600,
+      "opened": true,
+      "canNo": "17#",
+      "binlm": "Binlm.17",
+      "binWeight": "BinWeight.17",
+      "canName": "A-0601",
+      "type":"Large_Material_Bin",
+      "invCode": "A-0601",
+      "errorRemainingQuantity": 20,
+      "canCapacity": 10000,
+      "actualRemainingQuantity": 288.94
+    },
+    {
+      "nominalRemainingQuantity": 500,
+      "maxQuantity": 600,
+      "opened": true,
+      "canNo": "18#",
+      "binlm": "Binlm.18",
+      "binWeight": "BinWeight.18",
+      "canName": "00619999i",
+      "type":"Large_Material_Bin",
+      "invCode": "00619999i",
+      "errorRemainingQuantity": 20,
+      "canCapacity": 10000,
+      "actualRemainingQuantity": 185.98
+    }
+  ],
+  "clientDevice": [
+    {
+      "ip": "192.168.3.55",
+      "name": "六楼投料终端",
+      "type": "PC_Device",
+      "status": "1",
+      "lineCode": "LINE_11",
+      "code":"feeding_6f"
+    },
+    {
+      "ip": "192.168.3.54",
+      "name": "三楼称重终端",
+      "type": "PC_Device",
+      "status": "1",
+      "lineCode": "LINE_11",
+      "code":"weighting"
+    },
+    {
+      "ip": "192.168.3.53",
+      "name": "三楼投料终端",
+      "type": "PC_Device",
+      "status": "1",
+      "lineCode": "LINE_11",
+      "code":"feeding_3f"
+    },
+    {
+      "ip": "192.168.3.52",
+      "name": "一楼载体投料终端",
+      "type": "PC_Device",
+      "status": "1",
+      "lineCode": "LINE_11",
+      "code":"feeding_1f"
+    },
+    {
+      "ip": "192.168.3.51",
+      "name": "一楼包装终端",
+      "type": "PC_Device",
+      "status": "1",
+      "lineCode": "LINE_11",
+      "code":"packing_1f"
+    },
+    {
+      "ip": "192.168.4.6",
+      "name": "仓库",
+      "type": "PC_Device",
+      "status": "1",
+      "lineCode": null,
+      "code":"wms"
+    },
+    {"ip":"192.168.11.12","name":"21线大料称重","type":"PC_Device","status":"1","lineCode":"LINE_21","code":"WeightingBigLine21"},
+    {"ip":"192.168.11.11","name":"21线小料称重","type":"PC_Device","status":"1","lineCode":"LINE_21","code":"WeightingSmallLine21"},
+    {"ip":"192.168.11.14","name":"21线包装","type":"PC_Device","status":"1","lineCode":"LINE_21","code":"PackingLine21"},
+    {"ip":"192.168.11.13","name":"21线投料","type":"PC_Device","status":"1","lineCode":"LINE_21","code":"FeedingLine21"},
+    {"ip":"192.168.3.63","name":"12线投料","type":"PC_Device","status": "1","lineCode": "LINE_11","code":"FeedingLine12"},
+    {"ip":"192.168.3.64","name":"12线大料称重","type":"PC_Device","status":"1","lineCode":"LINE_12","code":"WeightingBigLine12"},
+    {"ip":"192.168.3.62","name":"12线小料称重","type":"PC_Device","status":"1","lineCode":"LINE_12","code":"WeightingSmallLine12"},
+    {"ip":"192.168.3.61","name":"12线包装","type":"PC_Device","status":"1","lineCode":"LINE_12","code":"PackingLine12"},
+    {"ip":"192.168.3.56","name":"11线看板","type":"PC_Device","status":"1","lineCode":"LINE_11","code":"ManufacturingCenter"}
+  ],
+  "rfidEmployeeCard": [
+    {"employeeCode":"A20110800871","rfidEpc":"A20110800871","employeeName":"宋加续","departmentName":"生产部","roleName":"生产部","status":"1"},
+    {"employeeCode":"A20110800872","rfidEpc":"A20110800872","employeeName":"张超学","departmentName":"生产部","roleName":"生产部","status":"1"},
+    {"employeeCode":"A20110800883","rfidEpc":"A20110800883","employeeName":"沈辉","departmentName":"生产部","roleName":"生产部","status":"1"},
+    {"employeeCode":"A20110800874","rfidEpc":"A20110800874","employeeName":"尹国昌","departmentName":"生产部","roleName":"生产部","status":"1"},
+    {"employeeCode":"A20110800876","rfidEpc":"A20110800876","employeeName":"李宝才","departmentName":"生产部","roleName":"生产部","status":"1"},
+    {"employeeCode":"A20110800877","rfidEpc":"A20110800877","employeeName":"徐晓栋","departmentName":"生产部","roleName":"生产部","status":"1"},
+    {"employeeCode":"A20110800878","rfidEpc":"A20110800878","employeeName":"朱华伟","departmentName":"生产部","roleName":"生产部","status":"1"},
+    {"employeeCode":"A20110800879","rfidEpc":"A20110800879","employeeName":"沈海兵","departmentName":"生产部","roleName":"生产部","status":"1"},
+    {"employeeCode":"A20110800880","rfidEpc":"A20110800880","employeeName":"丁洁辉","departmentName":"生产部","roleName":"生产部","status":"1"},
+    {"employeeCode":"A20110800881","rfidEpc":"A20110800881","employeeName":"李春来","departmentName":"生产部","roleName":"生产部","status":"1"},
+    {"employeeCode":"A20110800882","rfidEpc":"A20110800882","employeeName":"王猛","departmentName":"生产部","roleName":"生产部","status":"1"},
+    {"employeeCode":"A20110800884","rfidEpc":"A20110800884","employeeName":"白松松","departmentName":"生产部","roleName":"生产部","status":"1"},
+    {"employeeCode":"A20110800887","rfidEpc":"A20110800887","employeeName":"陈保金","departmentName":"生产部","roleName":"生产部","status":"1"},
+    {"employeeCode":"A20110800885","rfidEpc":"A20110800885","employeeName":"刘超 ","departmentName":"生产部","roleName":"生产部","status":"1"},
+    {"employeeCode":"201108000511","rfidEpc":"201108000511","employeeName":"测试员A ","departmentName":"实施","roleName":"实施","status":"1"},
+    {"employeeCode":"201108000587","rfidEpc":"201108000587","employeeName":"测试员B ","departmentName":"实施","roleName":"实施","status":"1"}
+  ],
+  "apps":[
+    {"name":"mqtt","ip":"127.0.0.1","port":"1883"},
+    {"name":"opc","ip":"127.0.0.1","port":"135"},
+    {"name":"打印","ip":"127.0.0.1","port":"8099"},
+    {"name":"数据库","ip":"127.0.0.1","port":"1433"},
+    {"name":"SCT","ip":"127.0.0.1","port":"8080"},
+    {"name":"1F打印机","ip":"127.0.0.1","port":"9100"},
+    {"name":"仓库打印","ip":"127.0.0.1","port":"8099"}
+  ],
+  "printer":[
+    {"printerNumber":"1","printerName":"11线打印机","printerServices":"ZDesigner 105SLPlus-300dpi ZPL","model":"105LPlus","produceLine":"11"},
+    {"printerNumber":"2","printerName":"21线打印机","printerServices":"ZDesigner ZM400 300 dpi (ZPL)","model":"ZM400","produceLine":"21"},
+    {"printerNumber":"3","printerName":"仓库打印机","printerServices":"ZDesigner GT800 (EPL)","model":"GT800","produceLine":null},
+    {"printerNumber":"4","printerName":"测试打印机","printerServices":"ZM400-TEST","model":"ZM400-TEST","produceLine":null}
+  ],
+  "produceLineConfig":[
+    {"lineNumber":"11","lineName":"一车间一产线","printer":"11线打印机"},
+    {"lineNumber":"12","lineName":"一车间二产线","printer":"11线打印机"},
+    {"lineNumber":"21","lineName":"二车间一产线","printer":"21线打印机"}
+  ],
+  "settingConfig":[
+    {"name":"混合时间","value":120,"type":"BLEND_TIME"},
+    {"name":"混合频率","value":35,"type":"BLEND_HZ"}
+  ],
+  "productLabelsType":[
+    {"sortSeq":1,"labelChineseName":"富朗特多维","labelEnglishName":"Frontan Multi-Vitamins","templateType":"VITAMIN","templateName":"general_detail","productionLicense":"沪饲预（2017）05008"},
+    {"sortSeq":2,"labelChineseName":"富朗特复合预混料","labelEnglishName":"","templateType":"COMPOUND","templateName":"general_detail","productionLicense":"沪饲预（2017）05008"},
+    {"sortSeq":3,"labelChineseName":"富朗特微量元素预混料","labelEnglishName":"","templateType":"MICROELEMENT","templateName":"general_detail","productionLicense":"沪饲预（2017）05008"},
+    {"sortSeq":4,"labelChineseName":"富朗特动物营养","labelEnglishName":"Frontan Animal Nutrition","templateType":"ANIMAL_PROTECTION","templateName":"yingyang","productionLicense":"沪饲预（2017）05008"}  ],
+  "rfidConfigInformation":[
+    {
+      "name":"信号强度配置",
+      "rfid_pass_duration": 10,
+      "tongka_swip_rssi": -50,
+      "normal_rfid_swip_rssi": -35,
+      "rfid_can_swip_duration": 2
+    }
+  ],
+  "impinj": [
+    {
+      "name":"1楼",
+      "specId": "192.168.3.103+1F",
+      "ip": "192.168.3.103"
+    },
+    {
+      "name":"3楼称重",
+      "specId": "192.168.3.100+3F",
+      "ip": "192.168.3.100"
+    },
+    {
+      "name":"3楼投料",
+      "specId": "192.168.3.102+3F",
+      "ip": "192.168.3.102"
+    },
+    {
+      "name":"6楼投料",
+      "specId": "192.168.3.101+6F",
+      "ip": "192.168.3.101"
+    }
+  ],
+  "ports":[
+    {
+      "name":"1楼",
+      "antenna":2,
+      "valid_rssi":-80
+    },
+    {
+      "name":"3楼投料人员",
+      "antenna":3,
+      "valid_rssi":-80
+    },
+    {
+      "name":"3楼投料桶卡",
+      "antenna":1,
+      "valid_rssi":-80
+    },
+    {
+      "name":"3楼称重人员",
+      "antenna":1,
+      "valid_rssi":-41
+    },
+    {
+      "name":"3楼称重桶卡",
+      "antenna":2,
+      "valid_rssi":-80
+    },
+    {
+      "name":"3楼称重物料",
+      "antenna":3,
+      "valid_rssi":-80
+    },
+    {
+      "name":"6楼投料人员",
+      "antenna":4,
+      "valid_rssi":-80
+    },
+    {
+      "name":"6楼投料物料",
+      "antenna":3,
+      "valid_rssi":-58
+    }
+    ]
+}

@@ -19,4 +19,5 @@ public interface OpcService {
 
     //读取某个itemId的值
     String readOpc(String itemId);
+
 }

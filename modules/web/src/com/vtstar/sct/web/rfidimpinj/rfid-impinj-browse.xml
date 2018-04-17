@@ -29,6 +29,7 @@
                 <action id="create"/>
                 <action id="edit"/>
                 <action id="remove"/>
+                <action id="loadDs"/>
             </actions>
             <columns>
                 <column id="name"/>
@@ -45,6 +46,9 @@
                         action="rfidImpinjsTable.edit"/>
                 <button id="removeBtn"
                         action="rfidImpinjsTable.remove"/>
+                <button id="loadDs"
+                        caption="msg://loadDs"
+                        invoke="loadDs"/>
             </buttonsPanel>
         </groupTable>
     </layout>

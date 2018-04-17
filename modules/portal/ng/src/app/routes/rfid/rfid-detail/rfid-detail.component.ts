@@ -12,7 +12,6 @@ import {AppSettings} from '@core/AppSettings';
 })
 export class RfidDetailComponent implements OnInit {
     item;
-    cubaApp;
     rfidPortsData: any[];
 
     rfidPortsColumns: SimpleTableColumn[] = [
