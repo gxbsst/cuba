@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://browseCaption"
+        class="com.vtstar.sct.web.vtclientdeviceinformation.VtClientDeviceInformationBrowse"
+        focusComponent="vtClientDeviceInformationsTable"
+        lookupComponent="vtClientDeviceInformationsTable"
+        messagesPack="com.vtstar.sct.web.vtclientdeviceinformation">
+    <dsContext>
+        <groupDatasource id="vtClientDeviceInformationsDs"
+                         class="com.vtstar.sct.entity.VtClientDeviceInformation"
+                         view="_local">
+            <query>
+                <![CDATA[select e from sct$VtClientDeviceInformation e]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="vtClientDeviceInformationsTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="vtClientDeviceInformationsTable"
+                datasource="vtClientDeviceInformationsDs">
+            <properties include="(ip)|(name)|(type)|(status)|(productLine)|(comment)"/>
+        </filter>
+        <groupTable id="vtClientDeviceInformationsTable"
+                    width="100%">
+            <actions>
+                <action id="create"/>
+                <action id="edit"/>
+                <action id="remove"/>
+                <action id="refresh"
+                        invoke="onRefresh"/>
+                <action id="loadDs"/>
+            </actions>
+            <columns>
+                <column id="ip"/>
+                <column id="name"/>
+                <column id="type"/>
+                <column id="status"/>
+                <column id="lineCode"
+                        caption="msg://line_code"/>
+                <column id="code"
+                        caption="msg://client_code"/>
+                <column id="comment"/>
+                <column id="state"/>
+            </columns>
+            <rows datasource="vtClientDeviceInformationsDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="vtClientDeviceInformationsTable.create"/>
+                <button id="editBtn"
+                        action="vtClientDeviceInformationsTable.edit"/>
+                <button id="removeBtn"
+                        action="vtClientDeviceInformationsTable.remove"/>
+                <button id="refreshBtn"
+                        action="vtClientDeviceInformationsTable.refresh"
+                        caption="msg://refresh"/>
+                <button id="loadDs"
+                        caption="msg://loadDs"
+                        invoke="loadDs"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>

@@ -32,4 +32,8 @@
             template="com/vtstar/sct/web/vtbuhlerbin/vt-buhler-bin-edit.xml"/>
     <screen id="sct$VtBuhlerBin.browse"
             template="com/vtstar/sct/web/vtbuhlerbin/vt-buhler-bin-browse.xml"/>
+    <screen id="sct$VtClientDeviceInformation.edit"
+            template="com/vtstar/sct/web/vtclientdeviceinformation/vt-client-device-information-edit.xml"/>
+    <screen id="sct$VtClientDeviceInformation.browse"
+            template="com/vtstar/sct/web/vtclientdeviceinformation/vt-client-device-information-browse.xml"/>
 </screen-config>

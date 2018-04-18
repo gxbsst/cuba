@@ -7,5 +7,6 @@
         <item screen="sct$VtBuhlerBin.browse"/>
         <item screen="sct$RfidImpinj.browse"/>
         <item screen="sct$Mqtt.browse"/>
+        <item screen="sct$VtClientDeviceInformation.browse"/>
     </menu>
 </menu-config>

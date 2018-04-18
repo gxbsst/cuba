@@ -10,5 +10,6 @@ public interface UtilsService {
 
     // 根据 itemId 查询 是否存在OPC信号信息
     VtOPCSignal queryOPCSignal(String itemId);
-
+    
+    boolean checkClientStateByPing();
 }

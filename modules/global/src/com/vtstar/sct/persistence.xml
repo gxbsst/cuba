@@ -10,5 +10,6 @@
         <class>com.vtstar.sct.entity.VtApps</class>
         <class>com.vtstar.sct.entity.VtOPCSignalUpdateLog</class>
         <class>com.vtstar.sct.entity.VtBuhlerBin</class>
+        <class>com.vtstar.sct.entity.VtClientDeviceInformation</class>
     </persistence-unit>
 </persistence>

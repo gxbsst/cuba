@@ -2,6 +2,7 @@
 <studio>
     <settings>
         <freeDbmsKeywords>TYPE</freeDbmsKeywords>
+        <freeDbmsKeywords>COMMENT</freeDbmsKeywords>
     </settings>
     <screenDesigner>
         <screen layoutAnalysisDisabled="true"

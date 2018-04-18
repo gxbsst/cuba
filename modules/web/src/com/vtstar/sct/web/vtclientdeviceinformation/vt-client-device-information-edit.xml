@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://editorCaption"
+        class="com.vtstar.sct.web.vtclientdeviceinformation.VtClientDeviceInformationEdit"
+        datasource="vtClientDeviceInformationDs"
+        focusComponent="fieldGroup"
+        messagesPack="com.vtstar.sct.web.vtclientdeviceinformation">
+    <dsContext>
+        <datasource id="vtClientDeviceInformationDs"
+                    class="com.vtstar.sct.entity.VtClientDeviceInformation"
+                    view="_local"/>
+    </dsContext>
+    <dialogMode forceDialog="true"
+                width="700"/>
+    <layout spacing="true">
+        <groupBox spacing="true">
+            <fieldGroup id="fieldGroup"
+                        align="TOP_CENTER"
+                        datasource="vtClientDeviceInformationDs"
+                        width="100%">
+                <column width="100%">
+                    <field property="ip"
+                           width="90%"/>
+                    <field property="type"
+                           width="90%"/>
+                    <field property="lineCode"
+                           width="90%"/>
+                </column>
+                <column width="100%">
+                    <field property="code"
+                           width="90%"/>
+                    <field property="name"
+                           width="90%"/>
+                    <field property="status"
+                           width="90%"/>
+                    <field property="comment"
+                           width="90%"/>
+                </column>
+            </fieldGroup>
+            <frame id="windowActions"
+                   height="100%"
+                   screen="editWindowActions"/>
+        </groupBox>
+    </layout>
+</window>

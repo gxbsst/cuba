@@ -16,6 +16,9 @@ public interface LoadDatasourceService {
 
     void loadRfidConfigData();
 
+    //导入ClientDevice数据
+    void loadClientDevice();
+
 
     //导入包装规格信息
     //String loadPackageSpecDatasource();

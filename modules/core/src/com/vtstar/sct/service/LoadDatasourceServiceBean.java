@@ -178,7 +178,7 @@ public class LoadDatasourceServiceBean implements LoadDatasourceService {
     }
 
     @Override
-    public void loadRfidConfigData(){
+    public void loadRfidConfigData() {
         File file = new File("./loadDatasource.json");
         String JsonContext = null;
         try {
@@ -221,6 +221,91 @@ public class LoadDatasourceServiceBean implements LoadDatasourceService {
             rfidImpinj.setSpecId(jsonObject.get("specId").toString());
 //            rfidImpinj.setPort(rfidConfigService.queryPort(jsonObject.get("name").toString()));
             dataManager.commit(rfidImpinj);
+        }
+    }
+
+    //导入ClientDevice数据
+    @Override
+    public void loadClientDevice() {
+        File file = new File("./loadDatasource.json");
+        String JsonContext = null;
+        try {
+            JsonContext = ReadFile(file.getCanonicalPath());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Map mapTypes = JSON.parseObject(JsonContext);
+
+        JSONArray jsonArray = JSONArray.parseArray(mapTypes.get("clientDevice").toString());
+
+        for (int i = 0; i < jsonArray.size(); i++) {
+            JSONObject jsonObject = jsonArray.getJSONObject(i);
+            VtClientDeviceInformation vtClientDeviceInformation = new VtClientDeviceInformation();
+            vtClientDeviceInformation.setIp(jsonObject.get("ip").toString());
+            vtClientDeviceInformation.setName(jsonObject.get("name").toString());
+//            vtClientDeviceInformation.setStatus(jsonObject.get("status").toString());
+            if (jsonObject.get("type").toString().equals("PC_Device")) {
+                vtClientDeviceInformation.setType(VtClientDeviceTypeEnum.PC_Device);
+            } else if (jsonObject.get("type").toString().equals("RFID_Device")) {
+                vtClientDeviceInformation.setType(VtClientDeviceTypeEnum.RFID_Device);
+            }
+            if (jsonObject.get("lineCode") != null) {
+                if (jsonObject.get("lineCode").toString().equals("LINE_11")) {
+                    vtClientDeviceInformation.setLineCode(VtClientLineCodeEnum.LINE_11);
+                } else if (jsonObject.get("lineCode").toString().equals("LINE_12")) {
+                    vtClientDeviceInformation.setLineCode(VtClientLineCodeEnum.LINE_12);
+                } else if (jsonObject.get("lineCode").toString().equals("LINE_21")) {
+                    vtClientDeviceInformation.setLineCode(VtClientLineCodeEnum.LINE_21);
+                }
+            }
+            switch (jsonObject.get("code").toString()) {
+                case "weighting":
+                    vtClientDeviceInformation.setCode(VtClientCodeEnum.LINE_11_WEIGHTING);
+                    break;
+                case "feeding_3f":
+                    vtClientDeviceInformation.setCode(VtClientCodeEnum.LINE_11_3F_FEEDING);
+                    break;
+                case "feeding_6f":
+                    vtClientDeviceInformation.setCode(VtClientCodeEnum.LINE_11_6F_FEEDING);
+                    break;
+                case "feeding_1f":
+                    vtClientDeviceInformation.setCode(VtClientCodeEnum.LINE_11_1F_FEEDING);
+                    break;
+                case "packing_1f":
+                    vtClientDeviceInformation.setCode(VtClientCodeEnum.LINE_11_1F_PACKING);
+                    break;
+                case "wms":
+                    vtClientDeviceInformation.setCode(VtClientCodeEnum.WMS);
+                    break;
+                case "FeedingLine12":
+                    vtClientDeviceInformation.setCode(VtClientCodeEnum.LINE_12_FEEDING);
+                    break;
+                case "PackingLine12":
+                    vtClientDeviceInformation.setCode(VtClientCodeEnum.LINE_12_PACKING);
+                    break;
+                case "WeightingSmallLine12":
+                    vtClientDeviceInformation.setCode(VtClientCodeEnum.LINE_12_SMALL_WEIGHTING);
+                    break;
+                case "WeightingBigLine12":
+                    vtClientDeviceInformation.setCode(VtClientCodeEnum.LINE_12_BIG_WEIGHTING);
+                    break;
+                case "FeedingLine21":
+                    vtClientDeviceInformation.setCode(VtClientCodeEnum.LINE_21_FEEDING);
+                    break;
+                case "PackingLine21":
+                    vtClientDeviceInformation.setCode(VtClientCodeEnum.LINE_21_PACKING);
+                    break;
+                case "WeightingSmallLine21":
+                    vtClientDeviceInformation.setCode(VtClientCodeEnum.LINE_21_SMALL_WEIGHTING);
+                    break;
+                case "WeightingBigLine21":
+                    vtClientDeviceInformation.setCode(VtClientCodeEnum.LINE_21_BIG_WEIGHTING);
+                    break;
+                case "ManufacturingCenter":
+                    vtClientDeviceInformation.setCode(VtClientCodeEnum.LINE_11_MANUFACTURING_CENTER);
+                    break;
+            }
+            dataManager.commit(vtClientDeviceInformation);
         }
     }
 }
