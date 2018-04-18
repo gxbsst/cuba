@@ -3,6 +3,9 @@
 </div>
 
 <simple-table [data]="data" [ps]="10" [columns]="columns">
+    <ng-template st-row="logo" let-i>
+        <nz-avatar [nzSrc]="i.logoUrl"></nz-avatar>
+    </ng-template>
     <ng-template st-row="status" let-i>
         <nz-badge [nzStatus]="i.statusType" [nzText]="i.statusText"></nz-badge>
     </ng-template>

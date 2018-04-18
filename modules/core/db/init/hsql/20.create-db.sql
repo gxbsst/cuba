@@ -12,3 +12,6 @@ create index IDX_SCT_VT_OPC_SIGNAL_UPDATE_LOG_VT_OPC_SIGNAL on SCT_VT_OPC_SIGNAL
 -- begin SCT_VT_BUHLER_BIN
 create unique index IDX_SCT_VT_BUHLER_BIN_UNIQ_CAN_NO on SCT_VT_BUHLER_BIN (CAN_NO) ^
 -- end SCT_VT_BUHLER_BIN
+-- begin SCT_VT_APPS
+alter table SCT_VT_APPS add constraint FK_SCT_VT_APPS_LOGO foreign key (LOGO_ID) references SYS_FILE(ID)^
+-- end SCT_VT_APPS

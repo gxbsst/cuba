@@ -26,7 +26,7 @@ const routes: Routes = [
         path: '',
         component: LayoutDefaultComponent,
         children: [
-            {path: '', redirectTo: 'dashboard/v1', pathMatch: 'full'},
+            {path: '', redirectTo: 'apps', pathMatch: 'full'},
             {path: 'dashboard', redirectTo: 'dashboard/v1', pathMatch: 'full'},
             {path: 'dashboard/v1', component: DashboardV1Component},
             {path: 'dashboard/analysis', component: DashboardAnalysisComponent},

@@ -5,7 +5,7 @@ import {Chart, Highcharts} from 'angular-highcharts';
 @Component({
     selector: 'vt-gauge',
     template: `
-        <div style="width: 100px; height: 80px; float: left" [chart]="chart"></div>
+        <div style="width: 130px; height: 90px; float: left" [chart]="chart"></div>
     `,
 })
 export class VtGaugeComponent implements OnInit {

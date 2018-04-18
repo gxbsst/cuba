@@ -3,4 +3,9 @@
     <settings>
         <freeDbmsKeywords>TYPE</freeDbmsKeywords>
     </settings>
+    <screenDesigner>
+        <screen layoutAnalysisDisabled="true"
+                module="web"
+                reference="com/vtstar/sct/web/vtapps/vt-apps-edit.xml"/>
+    </screenDesigner>
 </studio>

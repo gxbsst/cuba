@@ -19,6 +19,10 @@ export class AppsListComponent implements OnInit {
         {index: 1, text: '运行中', value: false, type: 'processing', checked: false},
     ];
     columns: SimpleTableColumn[] = [
+        {
+            title: 'LOGO',
+            render: 'logo',
+        },
         {title: '应用名', index: 'name'},
         {
             title: '状态',
@@ -125,6 +129,9 @@ export class AppsListComponent implements OnInit {
 
 
             self.data.forEach(function (item, index, theArray) {
+                if (item.logo) {
+                    item['logoUrl'] = AppSettings.BACKEND_FILE_URL + item.logo.id;
+                }
                 if (item.status === 'closed' || item.status === '') {
                     item['statusType'] = 'default';
                     item['statusText'] = '关闭';

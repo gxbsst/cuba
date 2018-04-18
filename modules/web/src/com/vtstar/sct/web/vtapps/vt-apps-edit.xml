@@ -8,7 +8,7 @@
     <dsContext>
         <datasource id="vtAppsDs"
                     class="com.vtstar.sct.entity.VtApps"
-                    view="_local"/>
+                    view="vtApps-view"/>
     </dsContext>
     <dialogMode forceDialog="true"
                 width="700"/>
@@ -32,6 +32,20 @@
                     <field property="status"/>
                 </column>
             </fieldGroup>
+            <embedded id="embeddedImage"
+                      align="MIDDLE_CENTER"
+                      width="100%"/>
+            <hbox align="BOTTOM_LEFT"
+                  spacing="true">
+                <upload id="uploadField"
+                        fileSizeLimit="200000"/>
+                <button id="downloadImageBtn"
+                        caption="msg://Download"
+                        invoke="onDownloadImageBtnClick"/>
+                <button id="clearImageBtn"
+                        caption="msg://Clear"
+                        invoke="onClearImageBtnClick"/>
+            </hbox>
             <frame id="windowActions"
                    height="100%"
                    screen="editWindowActions"/>

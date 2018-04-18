@@ -89,6 +89,7 @@ create table SCT_VT_APPS (
     DELETED_BY varchar(50),
     --
     NAME varchar(255),
+    LOGO_ID varchar(36),
     STATUS varchar(50),
     IP varchar(255),
     PORT integer,

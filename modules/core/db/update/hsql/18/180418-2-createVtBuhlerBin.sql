@@ -1,0 +1,1 @@
+create unique index IDX_SCT_VT_BUHLER_BIN_UNIQ_CAN_NO on SCT_VT_BUHLER_BIN (CAN_NO) ;

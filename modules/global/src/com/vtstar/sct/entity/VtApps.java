@@ -5,6 +5,12 @@ import com.haulmont.chile.core.annotations.NamePattern;
 import com.haulmont.cuba.core.entity.StandardEntity;
 
 import javax.persistence.*;
+import com.haulmont.cuba.core.entity.FileDescriptor;
+import com.haulmont.cuba.core.entity.annotation.OnDelete;
+import com.haulmont.cuba.core.global.DeletePolicy;
+
+import java.util.List;
+import com.haulmont.chile.core.annotations.Composition;
 
 @NamePattern("%s|name")
 @Table(name = "SCT_VT_APPS")
@@ -14,6 +20,13 @@ public class VtApps extends StandardEntity {
 
     @Column(name = "NAME")
     protected String name;
+
+    @Composition
+    @OnDelete(DeletePolicy.CASCADE)
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "LOGO_ID")
+    protected FileDescriptor logo;
+
 
     @Column(name = "STATUS")
     protected String status;
@@ -34,6 +47,15 @@ public class VtApps extends StandardEntity {
     @Lob
     @Column(name = "DESCRIPTION")
     protected String description;
+
+    public void setLogo(FileDescriptor logo) {
+        this.logo = logo;
+    }
+
+    public FileDescriptor getLogo() {
+        return logo;
+    }
+
 
     public void setStatus(VtAppsStatusEnum status) {
         this.status = status == null ? null : status.getId();

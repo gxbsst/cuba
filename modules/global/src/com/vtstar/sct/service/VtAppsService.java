@@ -13,4 +13,5 @@ public interface VtAppsService {
 
     public boolean checkClientState();
 
+    List<VtApps> fetch();
 }

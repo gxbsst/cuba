@@ -38,6 +38,18 @@
                     "i18n": "MQTT",
                     "icon": "anticon anticon-tool",
                     "link": "/mqtt/list"
+                },
+                {
+                    "text": "打印机",
+                    "i18n": "打印机",
+                    "icon": "anticon anticon-printer",
+                    "link": "/mqtt/list"
+                },
+                {
+                    "text": "看板",
+                    "i18n": "看板",
+                    "icon": "anticon anticon-desktop",
+                    "link": "/mqtt/list"
                 }
             ]
         }

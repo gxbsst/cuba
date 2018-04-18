@@ -15,6 +15,11 @@ export class OpcIndexComponent implements OnInit {
 
     data = [];
 
+    data1: any = {
+        salesData: [],
+        offlineData: []
+    };
+
     binData = [];
 
 
@@ -24,8 +29,6 @@ export class OpcIndexComponent implements OnInit {
         {title: '描述', index: 'description'},
     ];
 
-
-    percent = 87;
 
     constructor(private router: Router,
                 private opcService: OpcService,
@@ -41,6 +44,14 @@ export class OpcIndexComponent implements OnInit {
         const timer = Observable.timer(5000, AppSettings.TIMER_PERIOD);
         timer.subscribe(t => {
             this.fetchBuhlerBins();
+        });
+
+        this.http.get('/chart').subscribe((res: any) => {
+            res.offlineData.forEach((item: any) => {
+                item.chart = Object.assign([], res.offlineChartData);
+            });
+            this.data1 = res;
+
         });
     }
 

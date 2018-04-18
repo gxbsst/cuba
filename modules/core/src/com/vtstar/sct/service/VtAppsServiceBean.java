@@ -81,4 +81,10 @@ public class VtAppsServiceBean implements VtAppsService {
         }
     }
 
+    @Override
+    public List<VtApps> fetch() {
+        LoadContext<VtApps> loadContext = LoadContext.create(VtApps.class).setQuery(LoadContext.createQuery("select e from sct$VtApps e order by e.createTs DESC")).setView("vtApps-view");
+        return dataManager.loadList(loadContext);
+    }
+
 }

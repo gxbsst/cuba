@@ -31,6 +31,7 @@
     <service name="sct_VtAppsService">
         <method name="query"/>
         <method name="checkClientState"/>
+        <method name="fetch"/>
     </service>
     <service name="sct_VtBuhlerBinService">
         <method name="updateBinCoverStatus">

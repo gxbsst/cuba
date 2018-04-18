@@ -23,6 +23,10 @@
           name="vtApps-view"
           systemProperties="true">
         <property name="state"/>
+        <property name="logo"
+                  view="_minimal">
+            <property name="size"/>
+        </property>
     </view>
     <view class="com.vtstar.sct.entity.VtOPCSignalUpdateLog"
           extends="_local"
@@ -44,7 +48,6 @@
             <property name="recordTime"/>
         </property>
     </view>
-
     <view class="com.vtstar.sct.entity.VtBuhlerBin"
           extends="_local"
           name="vtBuhlerBin-with-material-view">
