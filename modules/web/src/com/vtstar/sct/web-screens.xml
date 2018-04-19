@@ -27,7 +27,6 @@
             template="com/vtstar/sct/web/vtopcsignalupdatelog/vt-opc-signal-update-log-browse.xml"/>
     <screen id="sct$VtOPCSignalUpdateLog.edit"
             template="com/vtstar/sct/web/vtopcsignalupdatelog/vt-opc-signal-update-log-edit.xml"/>
-
     <screen id="sct$VtBuhlerBin.edit"
             template="com/vtstar/sct/web/vtbuhlerbin/vt-buhler-bin-edit.xml"/>
     <screen id="sct$VtBuhlerBin.browse"
@@ -36,4 +35,6 @@
             template="com/vtstar/sct/web/vtclientdeviceinformation/vt-client-device-information-edit.xml"/>
     <screen id="sct$VtClientDeviceInformation.browse"
             template="com/vtstar/sct/web/vtclientdeviceinformation/vt-client-device-information-browse.xml"/>
+    <screen id="mainWindow"
+            template="com/vtstar/sct/web/screens/ext-mainwindow.xml"/>
 </screen-config>

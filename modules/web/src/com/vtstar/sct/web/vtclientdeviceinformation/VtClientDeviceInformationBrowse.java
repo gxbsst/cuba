@@ -1,13 +1,9 @@
 package com.vtstar.sct.web.vtclientdeviceinformation;
 
 import com.haulmont.cuba.gui.components.AbstractLookup;
-import com.haulmont.cuba.gui.components.Component;
 import com.haulmont.cuba.gui.components.GroupTable;
 import com.haulmont.cuba.gui.data.GroupDatasource;
-import com.haulmont.cuba.gui.executors.BackgroundTask;
-import com.haulmont.cuba.gui.executors.BackgroundTaskHandler;
 import com.haulmont.cuba.gui.executors.BackgroundWorker;
-import com.haulmont.cuba.gui.executors.TaskLifeCycle;
 import com.vtstar.sct.entity.VtClientDeviceInformation;
 import com.vtstar.sct.service.ApplicationEventProducerService;
 import com.vtstar.sct.service.LoadDatasourceService;
@@ -15,9 +11,7 @@ import com.vtstar.sct.service.UtilsService;
 import org.slf4j.Logger;
 
 import javax.inject.Inject;
-import java.util.Collection;
 import java.util.UUID;
-import java.util.concurrent.TimeUnit;
 
 public class VtClientDeviceInformationBrowse extends AbstractLookup {
 
