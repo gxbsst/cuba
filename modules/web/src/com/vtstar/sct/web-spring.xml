@@ -20,8 +20,12 @@
                        value="com.vtstar.sct.service.VtAppsService"/>
                 <entry key="sct_LoadDatasourceService"
                        value="com.vtstar.sct.service.LoadDatasourceService"/>
-                <entry key="sct_VtBuhlerBinService" value="com.vtstar.sct.service.VtBuhlerBinService"/>
-                <entry key="sct_UtilsService" value="com.vtstar.sct.service.UtilsService"/>
+                <entry key="sct_VtBuhlerBinService"
+                       value="com.vtstar.sct.service.VtBuhlerBinService"/>
+                <entry key="sct_UtilsService"
+                       value="com.vtstar.sct.service.UtilsService"/>
+                <entry key="sct_VtClientDeviceInformationService"
+                       value="com.vtstar.sct.service.VtClientDeviceInformationService"/>
             </map>
         </property>
     </bean>

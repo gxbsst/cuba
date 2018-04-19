@@ -39,4 +39,7 @@
             <param name="status"/>
         </method>
     </service>
+    <service name="sct_VtClientDeviceInformationService">
+        <method name="query"/>
+    </service>
 </services>

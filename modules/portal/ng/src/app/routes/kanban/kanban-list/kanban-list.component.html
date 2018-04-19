@@ -1,0 +1,24 @@
+<div class="content__title">
+    <h1> 看板</h1>
+</div>
+<div class="ant-card__body-nopadding sales-card">
+    <nz-tabset>
+        <nz-tab nzTitle="看板状态">
+            <simple-table #st [data]="data" [ps]="20" [columns]="columns">
+                <ng-template st-row="status" let-i>
+                    <nz-badge [nzStatus]="i.statusType" [nzText]="i.statusText"></nz-badge>
+                </ng-template>
+            </simple-table>
+        </nz-tab>
+
+        <nz-tab nzTitle="看板预览">
+            <div nz-row [nzGutter]="24" class="pt-lg">
+                <div nz-col nzXs="24" nzSm="12" nzMd="12" nzLg="4" *ngFor="let item of data">
+                    <g2-card [title]="item.name" contentHeight="200px">
+                    </g2-card>
+                </div>
+            </div>
+        </nz-tab>
+
+    </nz-tabset>
+</div>

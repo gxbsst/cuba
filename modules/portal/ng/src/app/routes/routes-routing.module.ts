@@ -40,7 +40,8 @@ const routes: Routes = [
             {path: 'mqtt', loadChildren: './mqtt/mqtt.module#MqttModule'},
             {path: 'apps', loadChildren: './apps/apps.module#AppsModule'},
             {path: 'rfid', loadChildren: './rfid/rfid.module#RfidModule'},
-            {path: 'opc', loadChildren: './opc/opc.module#OpcModule'}
+            {path: 'opc', loadChildren: './opc/opc.module#OpcModule'},
+            {path: 'kanban', loadChildren: './kanban/kanban.module#KanbanModule'}
         ]
     },
     // 全屏布局

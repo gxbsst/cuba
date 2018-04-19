@@ -49,7 +49,7 @@
                     "text": "看板",
                     "i18n": "看板",
                     "icon": "anticon anticon-desktop",
-                    "link": "/mqtt/list"
+                    "link": "/kanban/kanban-list"
                 }
             ]
         }

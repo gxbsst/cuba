@@ -24,6 +24,10 @@ export class AppsListComponent implements OnInit {
             render: 'logo',
         },
         {title: '应用名', index: 'name'},
+        {title: 'IP', index: 'ip'},
+        {title: '端口', index: 'port'},
+        {title: '启动脚本', index: 'batPath'},
+
         {
             title: '状态',
             index: 'status',
@@ -31,6 +35,7 @@ export class AppsListComponent implements OnInit {
             filters: this.status,
             filter: () => true
         },
+        {title: '备注', index: 'description'},
         {
             title: '操作区',
             buttons: [

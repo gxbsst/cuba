@@ -8,6 +8,7 @@ import com.haulmont.cuba.core.global.LoadContext;
 import com.vtstar.sct.entity.Mqtt;
 import com.vtstar.sct.entity.VtApps;
 import com.vtstar.sct.entity.VtAppsStatusEnum;
+import com.vtstar.sct.utils.MQTTUtil;
 import org.springframework.stereotype.Service;
 
 import javax.inject.Inject;
@@ -49,6 +50,8 @@ public class VtAppsServiceBean implements VtAppsService {
                 if (isOnline) {
                     item.setStatus(VtAppsStatusEnum.processing);
                 } else {
+                    MQTTUtil mqtt = new MQTTUtil("test");
+                    mqtt.publish("warning", "警报"+ item.getName() + "下线了");
                     item.setStatus(VtAppsStatusEnum.closed);
                 }
                 entityManager.merge(item);

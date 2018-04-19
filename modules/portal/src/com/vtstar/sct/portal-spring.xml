@@ -30,6 +30,8 @@
                        value="com.vtstar.sct.service.RfidService"/>
                 <entry key="sct_VtAppsService"
                        value="com.vtstar.sct.service.VtAppsService"/>
+                <entry key="sct_VtClientDeviceInformationService"
+                       value="com.vtstar.sct.service.VtClientDeviceInformationService"/>
             </map>
         </property>
     </bean>

@@ -31,6 +31,7 @@ import {MqttService} from './service/MqttService';
 import {OpcService} from './service/OpcService';
 import {AppsService} from './service/AppsService';
 import {RfidService} from './service/RfidService';
+import {KanbanService} from './service/kanbanservice';
 
 
 registerLocaleData(localeZhHans);
@@ -98,6 +99,7 @@ export function StartupServiceFactory(startupService: StartupService): Function 
         OpcService,
         AppsService,
         RfidService,
+        KanbanService,
         {
             provide: APP_INITIALIZER,
             useFactory: StartupServiceFactory,
