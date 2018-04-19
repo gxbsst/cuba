@@ -5,6 +5,7 @@ import com.haulmont.cuba.core.Persistence;
 import com.haulmont.cuba.core.Transaction;
 import com.haulmont.cuba.core.global.DataManager;
 import com.haulmont.cuba.core.global.LoadContext;
+import com.vtstar.sct.config.SctConfig;
 import com.vtstar.sct.entity.Mqtt;
 import com.vtstar.sct.entity.VtApps;
 import com.vtstar.sct.entity.VtAppsStatusEnum;
@@ -36,6 +37,9 @@ public class VtAppsServiceBean implements VtAppsService {
         return dataManager.loadList(loadContext);
     }
 
+    @Inject
+    private SctConfig sctConfig;
+
     @Override
     public boolean checkClientState() {
         LoadContext<VtApps> loadContext = LoadContext.create(VtApps.class).setQuery(LoadContext.createQuery("select e from sct$VtApps e order by e.createTs DESC"))
@@ -51,7 +55,10 @@ public class VtAppsServiceBean implements VtAppsService {
                     item.setStatus(VtAppsStatusEnum.processing);
                 } else {
                     MQTTUtil mqtt = new MQTTUtil("test");
-                    mqtt.publish("warning", "警报"+ item.getName() + "下线了");
+
+                    if(sctConfig.getIsPublishMQTTWithCheckAppState()) {
+                        mqtt.publish("warning", "警报"+ item.getName() + "下线了");
+                    }
                     item.setStatus(VtAppsStatusEnum.closed);
                 }
                 entityManager.merge(item);

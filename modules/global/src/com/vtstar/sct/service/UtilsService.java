@@ -12,4 +12,9 @@ public interface UtilsService {
     VtOPCSignal queryOPCSignal(String itemId);
     
     boolean checkClientStateByPing();
+
+    // 获取SCT Config
+    Config getSctConfig(String name);
+
+    List<Config> getSctConfig();
 }

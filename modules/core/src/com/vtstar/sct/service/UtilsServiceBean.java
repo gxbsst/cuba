@@ -3,6 +3,7 @@ package com.vtstar.sct.service;
 import com.haulmont.cuba.core.EntityManager;
 import com.haulmont.cuba.core.Persistence;
 import com.haulmont.cuba.core.Transaction;
+import com.haulmont.cuba.core.entity.Config;
 import com.haulmont.cuba.core.global.DataManager;
 import com.haulmont.cuba.core.global.LoadContext;
 import com.vtstar.sct.entity.VtApps;
@@ -68,4 +69,18 @@ public class UtilsServiceBean implements UtilsService {
 
     }
 
+    @Override
+    public Config getSctConfig(String name) {
+        LoadContext<Config> context = LoadContext.create(Config.class).setQuery(
+                LoadContext.createQuery("select e from sys$Config e where e.name =:name").setParameter("name", name));
+
+        return dataManager.load(context);
+    }
+
+    @Override
+    public List<Config> getSctConfig() {
+        LoadContext<Config> context = LoadContext.create(Config.class).setQuery(
+                LoadContext.createQuery("select e from sys$Config e"));
+        return dataManager.loadList(context);
+    }
 }
