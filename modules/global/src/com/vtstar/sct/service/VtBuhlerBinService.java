@@ -8,6 +8,9 @@ public interface VtBuhlerBinService {
 
     boolean updateBinCoverStatus(String canNo, String status);
 
+    //Buhler系统下料以后通过OPC更新料仓数量
+    String opcUpdateBuhlerBinQty(String topic, String value);
+
 //    //1楼载体，6楼大料投料之后更新料仓数量
 //    String feedingUpdateBuhlerBinQty(String canNo, BigDecimal qty);
 //

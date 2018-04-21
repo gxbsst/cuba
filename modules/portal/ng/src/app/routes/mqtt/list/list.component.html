@@ -1,20 +1,32 @@
 <page-header [title]="'MQTT'"></page-header>
-<simple-table #st [data]="data" [ps]="20" [columns]="columns">
-    <ng-template st-row="custom" type="title" let-c>
-        {{ c.title }}
-        <nz-dropdown nzTrigger="click" [nzClickHide]="false">
-            <i class="anticon anticon-smile-o ant-table-filter-icon" nz-dropdown></i>
-            <div class="ant-table-filter-dropdown p-sm">
-                <input type="text" nz-input placeholder="Search name" [(ngModel)]="searchValue" class="width-sm mr-sm">
-                <button nz-button [nzType]="'primary'" (click)="search()">搜索</button>
-            </div>
-        </nz-dropdown>
-    </ng-template>
 
-    <ng-template st-row="custom" let-item let-index="index">
+<nz-tabset>
+    <nz-tab nzTitle="统计">
 
-            <span > {{item.topic}}</span>
+        <simple-table #st1 [data]="groupData" [ps]="20" [columns]="groupColumns">
 
-    </ng-template>
+        </simple-table>
+    </nz-tab>
+    <nz-tab nzTitle="MQTT列表">
+        <simple-table #st [data]="data" [ps]="20" [columns]="columns">
+            <ng-template st-row="custom" type="title" let-c>
+                {{ c.title }}
+                <nz-dropdown nzTrigger="click" [nzClickHide]="false">
+                    <i class="anticon anticon-smile-o ant-table-filter-icon" nz-dropdown></i>
+                    <div class="ant-table-filter-dropdown p-sm">
+                        <input type="text" nz-input placeholder="主题" [(ngModel)]="searchValue" class="width-sm mr-sm">
+                        <button nz-button [nzType]="'primary'" (click)="query()">搜索</button>
+                    </div>
+                </nz-dropdown>
+            </ng-template>
 
-</simple-table>
+            <ng-template st-row="custom" let-item let-index="index">
+
+                <span> {{item.topic}}</span>
+
+            </ng-template>
+
+        </simple-table>
+    </nz-tab>
+</nz-tabset>
+

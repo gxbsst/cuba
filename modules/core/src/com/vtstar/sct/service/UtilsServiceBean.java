@@ -6,10 +6,7 @@ import com.haulmont.cuba.core.Transaction;
 import com.haulmont.cuba.core.entity.Config;
 import com.haulmont.cuba.core.global.DataManager;
 import com.haulmont.cuba.core.global.LoadContext;
-import com.vtstar.sct.entity.VtApps;
-import com.vtstar.sct.entity.VtAppsStatusEnum;
-import com.vtstar.sct.entity.VtClientDeviceInformation;
-import com.vtstar.sct.entity.VtOPCSignal;
+import com.vtstar.sct.entity.*;
 import org.springframework.stereotype.Service;
 
 import javax.inject.Inject;
@@ -82,5 +79,29 @@ public class UtilsServiceBean implements UtilsService {
         LoadContext<Config> context = LoadContext.create(Config.class).setQuery(
                 LoadContext.createQuery("select e from sys$Config e"));
         return dataManager.loadList(context);
+    }
+
+    //根据 binlm 查询布勒仓信息
+    @Override
+    public VtBuhlerBin queryBuhlerBin(String binlmOrBinWeight) {
+        if (binlmOrBinWeight.contains("binlm")) {
+            LoadContext<VtBuhlerBin> item = LoadContext.create(VtBuhlerBin.class).setQuery(
+                    LoadContext.createQuery("select e from sct$VtBuhlerBin e where e.binlm = :binlm")
+                            .setParameter("binlm", binlmOrBinWeight)).setView("vtBuhlerBin-with-material-view");
+            if (dataManager.loadList(item).size() < 1) {
+                return null;
+            } else {
+                return dataManager.load(item);
+            }
+        } else {
+            LoadContext<VtBuhlerBin> item = LoadContext.create(VtBuhlerBin.class).setQuery(
+                    LoadContext.createQuery("select e from sct$VtBuhlerBin e where e.binWeight=:binWeight")
+                            .setParameter("binWeight", binlmOrBinWeight));
+            if (dataManager.loadList(item).size() < 1) {
+                return null;
+            } else {
+                return dataManager.load(item);
+            }
+        }
     }
 }

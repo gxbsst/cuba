@@ -1,6 +1,7 @@
 package com.vtstar.sct.service;
 
 import com.haulmont.cuba.core.entity.Config;
+import com.vtstar.sct.entity.VtBuhlerBin;
 import com.vtstar.sct.entity.VtOPCSignal;
 
 import java.util.List;
@@ -17,4 +18,7 @@ public interface UtilsService {
     Config getSctConfig(String name);
 
     List<Config> getSctConfig();
+
+    //根据 binlm 查询布勒仓信息
+    VtBuhlerBin queryBuhlerBin(String binlmOrBinWeight);
 }

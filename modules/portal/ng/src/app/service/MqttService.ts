@@ -17,4 +17,8 @@ export class MqttService {
         return this.cubaApp.invokeService('sct_MqttService', 'mqtt');
     }
 
+    groupByTopic() {
+        return this.cubaApp.invokeService('sct_MqttService', 'groupByTopic');
+    }
+
 }

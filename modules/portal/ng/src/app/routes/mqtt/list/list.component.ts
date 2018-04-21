@@ -11,7 +11,7 @@ import {AppSettings} from '@core/AppSettings';
 export class ListComponent implements OnInit {
 
     data = [];
-    cubaApp: any;
+    groupData= [];
     searchValue = '';
 
     columns: SimpleTableColumn[] = [
@@ -20,12 +20,18 @@ export class ListComponent implements OnInit {
         {title: '信息', index: 'message'},
     ];
 
+    groupColumns: SimpleTableColumn[] = [
+        {title: '主题', index: 'topic'},
+        {title: '统计', index: 'count'}
+    ];
+
     constructor(private mqttService: MqttService) {
 
     }
 
     ngOnInit() {
         this.fetch();
+        this.queryGroupBy();
 
         const timer = Observable.timer(5000, AppSettings.TIMER_PERIOD);
         timer.subscribe(t => {
@@ -37,7 +43,7 @@ export class ListComponent implements OnInit {
         if (this.searchValue === '') {
             this.fetch();
         } else {
-            this.query(this.searchValue);
+            this.query();
         }
     }
 
@@ -48,9 +54,18 @@ export class ListComponent implements OnInit {
         });
     }
 
-    query(searchValue) {
-        this.mqttService.query(searchValue).then((response) => {
-            this.data = response;
+    query() {
+        this.mqttService.query(this.searchValue).then((response) => {
+
+            this.data = JSON.parse(response);
+        }, err => {
+
+        });
+    }
+
+    queryGroupBy() {
+        this.mqttService.groupByTopic().then((response) => {
+            this.groupData = JSON.parse(response);
         }, err => {
 
         });

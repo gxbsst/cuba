@@ -1,6 +1,8 @@
 package com.vtstar.sct.service;
 
 
+import com.vtstar.sct.entity.VtOPCSignal;
+
 import java.nio.channels.ClosedChannelException;
 import java.util.Map;
 
@@ -20,4 +22,5 @@ public interface OpcService {
     //读取某个itemId的值
     String readOpc(String itemId);
 
+    VtOPCSignal update(Map params);
 }

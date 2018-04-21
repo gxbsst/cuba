@@ -52,4 +52,12 @@
           extends="_local"
           name="vtBuhlerBin-with-material-view">
     </view>
+    <view class="com.vtstar.sct.entity.Mqtt"
+          extends="_local"
+          name="mqtt-view_for_group_by">
+        <property name="updateTs"/>
+        <property name="updatedBy"/>
+        <property name="createTs"/>
+        <property name="createdBy"/>
+    </view>
 </views>

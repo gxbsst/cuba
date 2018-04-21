@@ -8,6 +8,7 @@
         <method name="query">
             <param name="params"/>
         </method>
+        <method name="groupByTopic"/>
     </service>
     <service name="sct_OpcService">
         <method name="changeStatus">
@@ -24,6 +25,9 @@
         <method name="readOpc">
             <param name="itemId"/>
         </method>
+        <method name="update">
+            <param name="params"/>
+        </method>
     </service>
     <service name="sct_RfidService">
         <method name="rfid"/>
@@ -37,6 +41,10 @@
         <method name="updateBinCoverStatus">
             <param name="canNo"/>
             <param name="status"/>
+        </method>
+        <method name="opcUpdateBuhlerBinQty">
+            <param name="topic"/>
+            <param name="value"/>
         </method>
     </service>
     <service name="sct_VtClientDeviceInformationService">

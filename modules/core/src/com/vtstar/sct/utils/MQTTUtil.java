@@ -16,6 +16,7 @@ public class MQTTUtil {
 	        // 设置是否清空session,这里如果设置为false表示服务器会保留客户端的连接记录，这里设置为true表示每次连接到服务器都以新的身份连接  
 	        options.setCleanSession(true);
 	        MqttMessage mqttMessage = new MqttMessage((jsonString).getBytes());
+	        mqttMessage.setRetained(false);
 	        client.connect(options);
 	        //保存发送记录,避免在sub之前pub过而客户端收不到
 	        client.publish(topic, mqttMessage.getPayload(), 1, true);

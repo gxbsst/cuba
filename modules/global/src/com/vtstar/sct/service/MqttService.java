@@ -12,4 +12,6 @@ public interface MqttService {
     public List<Mqtt> mqtt();
 
     List<Mqtt> query(String params);
+
+    List groupByTopic();
 }

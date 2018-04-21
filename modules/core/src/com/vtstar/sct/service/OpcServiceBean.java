@@ -1,6 +1,17 @@
 package com.vtstar.sct.service;
 
+import com.haulmont.cuba.core.EntityManager;
+import com.haulmont.cuba.core.Persistence;
+import com.haulmont.cuba.core.Transaction;
+import com.haulmont.cuba.core.global.DataManager;
+import com.haulmont.cuba.core.global.LoadContext;
+import com.haulmont.cuba.core.global.Metadata;
+import com.vtstar.sct.entity.Mqtt;
+import com.vtstar.sct.entity.VtApps;
+import com.vtstar.sct.entity.VtAppsStatusEnum;
+import com.vtstar.sct.entity.VtOPCSignal;
 import com.vtstar.sct.opc.ConnectionUtil;
+import com.vtstar.sct.utils.MQTTUtil;
 import org.apache.commons.lang3.concurrent.BasicThreadFactory;
 import org.jinterop.dcom.common.JIException;
 import org.jinterop.dcom.core.JIVariant;
@@ -10,8 +21,10 @@ import org.openscada.opc.lib.common.NotConnectedException;
 import org.openscada.opc.lib.da.*;
 import org.springframework.stereotype.Service;
 
+import javax.inject.Inject;
 import java.net.UnknownHostException;
 import java.nio.channels.ClosedChannelException;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
@@ -189,5 +202,33 @@ public class OpcServiceBean implements OpcService {
         return null;
     }
 
+    @Inject
+    private Metadata metadata;
+
+    @Inject
+    private DataManager dataManager;
+
+    @Inject
+    private Persistence persistence;
+
+    @Override
+    public VtOPCSignal update(Map params) {
+        String topic = (String) params.get("topic");
+        String itemId = topic.split("/")[1];
+        String value = (String) params.get("message");
+        LoadContext<VtOPCSignal> loadContext = LoadContext.create(VtOPCSignal.class)
+                .setQuery(LoadContext
+                        .createQuery("select e from sct$VtOPCSignal e where e.itemId=:itemId").setParameter("itemId", itemId));
+        VtOPCSignal item = dataManager.load(loadContext);
+        if (item != null) {
+            try (Transaction tx = persistence.createTransaction()) {
+                EntityManager entityManager = persistence.getEntityManager();
+                item.setValue(value);
+                entityManager.merge(item);
+                tx.commit();
+            }
+        }
+        return item;
+    }
 
 }

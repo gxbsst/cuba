@@ -13,3 +13,5 @@ test-run
 .project
 .settings
 #.classpath
+.ideaDataSources
+dataSources
